@@ -1,0 +1,38 @@
+{
+  "About": {
+    "description": "Auto imported from components/About.vue"
+  },
+  "Comments": {
+    "description": "Auto imported from components/Comments.vue"
+  },
+  "Footer": {
+    "description": "Auto imported from components/Footer.vue"
+  },
+  "Info": {
+    "description": "Auto imported from components/Info.vue"
+  },
+  "Lang": {
+    "description": "Auto imported from components/Lang.vue"
+  },
+  "Logo": {
+    "description": "Auto imported from components/Logo.vue"
+  },
+  "Market": {
+    "description": "Auto imported from components/Market.vue"
+  },
+  "Navigation": {
+    "description": "Auto imported from components/Navigation.vue"
+  },
+  "Price": {
+    "description": "Auto imported from components/Price.vue"
+  },
+  "Search": {
+    "description": "Auto imported from components/Search.vue"
+  },
+  "TableCoin": {
+    "description": "Auto imported from components/TableCoin.vue"
+  },
+  "VuetifyLogo": {
+    "description": "Auto imported from components/VuetifyLogo.vue"
+  }
+}

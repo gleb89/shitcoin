@@ -15,12 +15,11 @@
       <v-tab
         v-for="item in items"
         :key="item"
-        @click="onItem(item)"
       >
         {{ item }}
       </v-tab>
     </v-tabs>
-
+{{ontab}}
     <v-tabs-items v-model="tab">
       <v-tab-item
         v-for="item in items"
@@ -60,6 +59,14 @@ import Comments from  "@/components/Comments";
           Market,
           Comments
       },
+      computed:{
+        ontab(){
+          
+          this.iteminfo = this.items[this.tab]
+          
+        }
+        
+      },
     data () {
       return {
         tab:null,
@@ -70,11 +77,8 @@ import Comments from  "@/components/Comments";
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
       }
     },
-    methods:{
-        onItem(item){
-            this.iteminfo = item
-        }
 
-    }
+
+    
   }
 </script>

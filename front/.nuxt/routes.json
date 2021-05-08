@@ -1,0 +1,37 @@
+[
+  {
+    "name": "coins_list",
+    "path": "/coins_list",
+    "component": "/home/ubuntu/shitscoin/front/pages/coins_list/index.vue",
+    "chunkName": "pages/coins_list/index",
+    "_name": "_4f39b7c3"
+  },
+  {
+    "name": "inspire",
+    "path": "/inspire",
+    "component": "/home/ubuntu/shitscoin/front/pages/inspire.vue",
+    "chunkName": "pages/inspire",
+    "_name": "_6187cbb6"
+  },
+  {
+    "name": "search",
+    "path": "/search",
+    "component": "/home/ubuntu/shitscoin/front/pages/search.vue",
+    "chunkName": "pages/search",
+    "_name": "_d4f4dfa6"
+  },
+  {
+    "name": "coins_list-name",
+    "path": "/coins_list/:name",
+    "component": "/home/ubuntu/shitscoin/front/pages/coins_list/_name.vue",
+    "chunkName": "pages/coins_list/_name",
+    "_name": "_1b14934a"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/home/ubuntu/shitscoin/front/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_96143646"
+  }
+]
