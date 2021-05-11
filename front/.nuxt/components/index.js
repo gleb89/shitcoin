@@ -1,6 +1,7 @@
 import { wrapFunctional } from './utils'
 
 export { default as About } from '../../components/About.vue'
+export { default as Chatrs } from '../../components/Chatrs.vue'
 export { default as Comments } from '../../components/Comments.vue'
 export { default as Footer } from '../../components/Footer.vue'
 export { default as Info } from '../../components/Info.vue'
@@ -14,6 +15,7 @@ export { default as TableCoin } from '../../components/TableCoin.vue'
 export { default as VuetifyLogo } from '../../components/VuetifyLogo.vue'
 
 export const LazyAbout = import('../../components/About.vue' /* webpackChunkName: "components/about" */).then(c => wrapFunctional(c.default || c))
+export const LazyChatrs = import('../../components/Chatrs.vue' /* webpackChunkName: "components/chatrs" */).then(c => wrapFunctional(c.default || c))
 export const LazyComments = import('../../components/Comments.vue' /* webpackChunkName: "components/comments" */).then(c => wrapFunctional(c.default || c))
 export const LazyFooter = import('../../components/Footer.vue' /* webpackChunkName: "components/footer" */).then(c => wrapFunctional(c.default || c))
 export const LazyInfo = import('../../components/Info.vue' /* webpackChunkName: "components/info" */).then(c => wrapFunctional(c.default || c))

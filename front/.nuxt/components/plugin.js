@@ -3,6 +3,7 @@ import { wrapFunctional } from './utils'
 
 const components = {
   About: () => import('../../components/About.vue' /* webpackChunkName: "components/about" */).then(c => wrapFunctional(c.default || c)),
+  Chatrs: () => import('../../components/Chatrs.vue' /* webpackChunkName: "components/chatrs" */).then(c => wrapFunctional(c.default || c)),
   Comments: () => import('../../components/Comments.vue' /* webpackChunkName: "components/comments" */).then(c => wrapFunctional(c.default || c)),
   Footer: () => import('../../components/Footer.vue' /* webpackChunkName: "components/footer" */).then(c => wrapFunctional(c.default || c)),
   Info: () => import('../../components/Info.vue' /* webpackChunkName: "components/info" */).then(c => wrapFunctional(c.default || c)),

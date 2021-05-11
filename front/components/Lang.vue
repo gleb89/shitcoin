@@ -11,7 +11,8 @@
           v-bind="attrs"
           v-on="on"
         >
-          Язык
+        Язык
+          <fa icon="angle-down"></fa>
         </v-btn>
       </template>
 
@@ -31,7 +32,7 @@
     data: () => ({
       items: [
         { title: 'Русский' },
-        { title: 'Englesh' },
+        { title: 'English' },
         { title: 'Español' },
    
       ],

@@ -1,14 +1,3 @@
 <template>
-    <section>
-      <TableCoin/>
-  </section>
+    <div>hello</div>
 </template>
-
-<script>
-import TableCoin from "@/components/TableCoin";
-export default {
-components:{
-    TableCoin
-  }
-}
-</script>

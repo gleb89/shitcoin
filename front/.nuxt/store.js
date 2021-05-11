@@ -17,14 +17,14 @@ let store = {};
   // Enforce store modules
   store.modules = store.modules || {}
 
-  resolveStoreModules(require('../store/cases.js'), 'cases.js')
+  resolveStoreModules(require('../store/coins.js'), 'coins.js')
 
   // If the environment supports hot reloading...
 
   if (process.client && module.hot) {
     // Whenever any Vuex module is updated...
     module.hot.accept([
-      '../store/cases.js',
+      '../store/coins.js',
     ], () => {
       // Update `root.modules` with the latest definitions.
       updateModules()

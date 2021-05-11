@@ -4,11 +4,11 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _4f39b7c3 = () => interopDefault(import('../pages/coins_list/index.vue' /* webpackChunkName: "pages/coins_list/index" */))
-const _6187cbb6 = () => interopDefault(import('../pages/inspire.vue' /* webpackChunkName: "pages/inspire" */))
-const _d4f4dfa6 = () => interopDefault(import('../pages/search.vue' /* webpackChunkName: "pages/search" */))
-const _1b14934a = () => interopDefault(import('../pages/coins_list/_name.vue' /* webpackChunkName: "pages/coins_list/_name" */))
-const _96143646 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _ff7b45ec = () => interopDefault(import('../pages/coins_list/index.vue' /* webpackChunkName: "pages/coins_list/index" */))
+const _935bce04 = () => interopDefault(import('../pages/inspire.vue' /* webpackChunkName: "pages/inspire" */))
+const _d6905b98 = () => interopDefault(import('../pages/search.vue' /* webpackChunkName: "pages/search" */))
+const _240fcc1c = () => interopDefault(import('../pages/coins_list/_id.vue' /* webpackChunkName: "pages/coins_list/_id" */))
+const _12007414 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
 
@@ -23,23 +23,23 @@ export const routerOptions = {
 
   routes: [{
     path: "/coins_list",
-    component: _4f39b7c3,
+    component: _ff7b45ec,
     name: "coins_list"
   }, {
     path: "/inspire",
-    component: _6187cbb6,
+    component: _935bce04,
     name: "inspire"
   }, {
     path: "/search",
-    component: _d4f4dfa6,
+    component: _d6905b98,
     name: "search"
   }, {
-    path: "/coins_list/:name",
-    component: _1b14934a,
-    name: "coins_list-name"
+    path: "/coins_list/:id",
+    component: _240fcc1c,
+    name: "coins_list-id"
   }, {
     path: "/",
-    component: _96143646,
+    component: _12007414,
     name: "index"
   }],
 

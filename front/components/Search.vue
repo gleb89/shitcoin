@@ -14,9 +14,9 @@
       </v-btn>
 
       <v-text-field
-        v-model="search_case"
+        v-model="serch_coins"
         append-icon="mdi-magnify"
-        label="пример: s8/xr/8"
+        label="пример: btc "
         single-line
       ></v-text-field>
     </v-toolbar>
@@ -25,13 +25,14 @@
 
     <v-list three-line>
       <v-list-item
-        v-for="(item, i) in cases_list"
+      style="padding-top: 1rem;"
+        v-for="(item, i) in coins_list"
         :key="i"
         
         @click="onPagecase(item.id)"
       >
         <v-img
-          src="https://static.onlinetrade.ru/img/items/m/chekhol_apple_iphone_12_pro_max_leather_case_with_magsafe_dlya_iphone_12_pro_max_zolotisto_korichnevyy_1535950_1.jpg"
+          :src="item.image"
           class="mr-4"
           max-width="64"
           min-width="64"
@@ -40,10 +41,10 @@
         <v-list-item-content>
           <span
             class="text-uppercase font-weight-regular caption"
-            v-text="item.title"
-          ></span>
+            v-text="item.name"
+          > </span>
 
-          <div v-text="item.category[0].name"></div>
+          <div v-text="item.symbol"></div>
         </v-list-item-content>
       </v-list-item>
     </v-list>
@@ -53,26 +54,26 @@
 <script>
   export default {
     async fetch({store}){
-        if (store.getters['cases/cases'].length === 0){
-            await store.dispatch('cases/fetch')
+        if (store.getters['coins/coins'].length === 0){
+            await store.dispatch('coins/fetch')
         }
     },
-    props:['cases'],
+    props:['coins'],
     data(){
         return{
-            search_case:'',
+            serch_coins:'',
         }
     },
         computed: {
-        cases_list(){
-        if(this.search_case != ''){
-          return this.cases.filter(element =>{
-            return element.title.toLowerCase().includes(this.search_case.toLowerCase())
+        coins_list(){
+        if(this.serch_coins != ''){
+          return this.coins.filter(element =>{
+            return element.symbol.toLowerCase().includes(this.serch_coins.toLowerCase())
           })
             
        }
        else{
-         return this.cases
+         return this.coins
        }
             }
       },
@@ -80,8 +81,11 @@
       onHome(){
         this.$router.go(-1);
       },
-      onPagecase(case_id){
-        this.$router.push('/case/'+case_id)
+      onImage(image){
+      return `http://localhost:8000${image}`
+    },
+      onPagecase(coin){
+        this.$router.push('/coins_list/'+coin) 
       }
     }
   }

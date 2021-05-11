@@ -13,10 +13,10 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_7f83ab8b from 'nuxt_plugin_plugin_7f83ab8b' // Source: ./components/plugin.js (mode: 'all')
-import nuxt_plugin_plugin_49d1877a from 'nuxt_plugin_plugin_49d1877a' // Source: ./vuetify/plugin.js (mode: 'all')
-import nuxt_plugin_axios_570ae1be from 'nuxt_plugin_axios_570ae1be' // Source: ./axios.js (mode: 'all')
-import nuxt_plugin_fontawesome_69f6c5a3 from 'nuxt_plugin_fontawesome_69f6c5a3' // Source: ./fontawesome.js (mode: 'all')
+import nuxt_plugin_plugin_9ee75e5c from 'nuxt_plugin_plugin_9ee75e5c' // Source: ./components/plugin.js (mode: 'all')
+import nuxt_plugin_plugin_b7421748 from 'nuxt_plugin_plugin_b7421748' // Source: ./vuetify/plugin.js (mode: 'all')
+import nuxt_plugin_axios_94d8b230 from 'nuxt_plugin_axios_94d8b230' // Source: ./axios.js (mode: 'all')
+import nuxt_plugin_fontawesome_229aac2a from 'nuxt_plugin_fontawesome_229aac2a' // Source: ./fontawesome.js (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -213,20 +213,20 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_7f83ab8b === 'function') {
-    await nuxt_plugin_plugin_7f83ab8b(app.context, inject)
+  if (typeof nuxt_plugin_plugin_9ee75e5c === 'function') {
+    await nuxt_plugin_plugin_9ee75e5c(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_plugin_49d1877a === 'function') {
-    await nuxt_plugin_plugin_49d1877a(app.context, inject)
+  if (typeof nuxt_plugin_plugin_b7421748 === 'function') {
+    await nuxt_plugin_plugin_b7421748(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_axios_570ae1be === 'function') {
-    await nuxt_plugin_axios_570ae1be(app.context, inject)
+  if (typeof nuxt_plugin_axios_94d8b230 === 'function') {
+    await nuxt_plugin_axios_94d8b230(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_fontawesome_69f6c5a3 === 'function') {
-    await nuxt_plugin_fontawesome_69f6c5a3(app.context, inject)
+  if (typeof nuxt_plugin_fontawesome_229aac2a === 'function') {
+    await nuxt_plugin_fontawesome_229aac2a(app.context, inject)
   }
 
   // Lock enablePreview in context

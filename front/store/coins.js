@@ -1,6 +1,6 @@
 export const state = () => {
     return {
-      cases:[],
+      coins:[],
   
   
   
@@ -8,8 +8,8 @@ export const state = () => {
   }
   
   export const mutations = {
-    setCases (state,cases) {
-    state.cases = cases
+    setcoins (state,coins) {
+    state.coins = coins
   
     },
   
@@ -21,17 +21,17 @@ export const state = () => {
         const headers = {
             "Content-Type": "application/json"
           };
-        const cases = await this.$axios
-        .$get(`https://apifglkd.ru/cases/`,{
+        const coins = await this.$axios
+        .$get(`http://localhost:8000/api/v1/coinslist/`,{
           headers: headers
         })
-        commit('setCases',cases)
+        commit('setcoins',coins)
   
     }
   }
   
   export const getters = {
-    cases: s => s.cases,
+    coins: s => s.coins,
   
   
   }

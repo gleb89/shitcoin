@@ -2,6 +2,9 @@
   "About": {
     "description": "Auto imported from components/About.vue"
   },
+  "Chatrs": {
+    "description": "Auto imported from components/Chatrs.vue"
+  },
   "Comments": {
     "description": "Auto imported from components/Comments.vue"
   },

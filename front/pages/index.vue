@@ -5,12 +5,25 @@
       <div class="" style="width: 100%;text-align: center;" >
         <img class="img-call" src="call.png" alt="">
         <h1>Shitcoincap</h1>
+              <v-sparkline
+              v-if="gg"
+        :labels="[1,2,3,4,5]"
+        :value="[1,2,3,4,5]"
+        color="black"
+        line-width="2"
+        padding="16"
+      ></v-sparkline>
       </div>
     </v-col>
   </v-row>
     <section>
-      <TableCoin/>
+      <TableCoin :listcoins="listcoins"/>
+      <div class="text-center"> 
+        {{paginationcoin}}
+      <v-pagination v-model="page" :length="listcoins.count" circle></v-pagination>
+    </div>
   </section>
+
   </div>
 
 </template>
@@ -18,6 +31,48 @@
 <script>
 import TableCoin from "@/components/TableCoin";
 export default {
+    data(){
+      return{
+        page: 1,
+        gg:false
+      }
+    },
+    methods:{
+      
+    onData(page){
+        const headers = {
+          "Content-Type": "application/json"
+        };
+        this.$axios
+          .$get(`http://localhost:8000/api/v1/coins?page=${page}`, {
+            headers: headers
+          })
+          .then(response => {
+            this.listcoins = response
+          })
+      
+      }
+    },
+      asyncData({ $axios,route, error }) {
+    const headers = {
+        "Content-Type": "application/json"
+      };
+      const user_id = Number(route.params.id)
+       return $axios
+        .$get(`http://localhost:8000/api/v1/coins`, {
+          headers: headers
+        })
+        .then(
+          listcoins => {
+            return {listcoins}
+          })
+      },
+
+  computed:{
+    paginationcoin(){
+        this.onData(this.page) 
+    }
+  },
   components:{
     TableCoin
   }
@@ -26,7 +81,7 @@ export default {
 
 <style scoped>
 .header{
-  min-height: 100vh;
+  min-height: 70vh;
 }
 h1{
   text-shadow: 1px 1px 1px white;

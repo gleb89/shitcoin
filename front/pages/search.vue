@@ -1,7 +1,6 @@
 <template>
     <div >
-        <search :cases="cases"/>
-
+        <search :coins="coins"/>
     </div>
 </template>
 
@@ -15,12 +14,12 @@ export default {
     layout: 'search',
     data(){
         return{
-            cases:this.$store.getters['cases/cases']
+            coins:this.$store.getters['coins/coins']
         }
     },
 async fetch({store}){
-        if (store.getters['cases/cases'].length === 0){
-            await store.dispatch('cases/fetch')
+        if (store.getters['coins/coins'].length === 0){
+            await store.dispatch('coins/fetch')
         }
     },
   components:{

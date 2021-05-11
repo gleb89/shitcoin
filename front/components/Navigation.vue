@@ -9,11 +9,6 @@
       <span>Главная</span>
       <fa icon="home"></fa>
     </v-btn>
-
-    <v-btn @click="onList" class="box">
-      <span>Список</span>
-      <fa icon="th-list"></fa>
-    </v-btn>
     <v-btn @click="onSearch" class="box">
       <span>Поиск</span>
       <fa icon="search"></fa>

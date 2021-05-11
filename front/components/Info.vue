@@ -29,14 +29,15 @@
           color="basil"
           flat
         >
+       
           <v-card-text v-if="iteminfo === 'График'">
-              <Price/>
+              <Price :coinprice="coinprice"/>
           </v-card-text>
         <v-card-text v-if="iteminfo === 'Описание'">
-              <About/>
+              <About :description="description"/>
           </v-card-text>
         <v-card-text v-if="iteminfo === 'Рынки'">
-              <Market/>
+              <Market :exchange="exchange"/>
           </v-card-text>
         <v-card-text v-if="iteminfo === 'Коментарии'">
               <Comments/>
@@ -53,6 +54,7 @@ import About from  "@/components/About";
 import Market from  "@/components/Market";
 import Comments from  "@/components/Comments";
   export default {
+    props:['coin'],
       components:{
           Price,
           About,
@@ -69,7 +71,10 @@ import Comments from  "@/components/Comments";
       },
     data () {
       return {
+        exchange:this.coin.market_exchange,
+        description:this.coin.description,
         tab:null,
+        coinprice:this.coin,
         iteminfo:'График',
         items: [
           'График', 'Описание', 'Рынки', 'Коментарии',

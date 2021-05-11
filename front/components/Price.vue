@@ -20,7 +20,7 @@
 
     <v-card-text class="pt-0">
       <div class="title font-weight-light mb-2">
-        График за 24 часа
+        График за все время{{onPriceList}}
       </div>
       <v-divider class="my-2"></v-divider>
       <v-icon
@@ -35,27 +35,25 @@
 
 <script>
   export default {
+    props:['coinprice'],
+    computed:{
+            onPriceList(){
+        for (let key of Object.keys(this.coinprice.board_price[0])){
+          this.labels.push(key)
+        }
+          for (let val of Object.values(this.coinprice.board_price[0])){
+          this.value.push(val)
+        }
+      }
+    },
+    methods:{
+
+    },
     data: () => ({
-      labels: [
-        '12am',
-        '3am',
-        '6am',
-        '9am',
-        '12pm',
-        '3pm',
-        '6pm',
-        '9pm',
-      ],
-      value: [
-        200,
-        675,
-        410,
-        390,
-        310,
-        460,
-        250,
-        240,
-      ],
+      pricelist:[],
+      labels: [],
+      value: [],
     }),
   }
 </script>
+

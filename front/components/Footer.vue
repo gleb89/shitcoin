@@ -13,18 +13,14 @@
         <v-card-text>
           <p>
             <a style="color:white;" href="tg://resolve?domain=hleb89">telegram</a>
-          </p>
-          <p>
-            <a style="color:white;" href="whatsapp://send?phone=+79991845015">whatsapp</a>
-          </p>
-          
+          </p>   
         </v-card-text>
 
         <v-divider></v-divider>
 
         <v-card-text class="white--text"> 
         <fa icon='copyright'></fa> 
-          {{ new Date().getFullYear() }} — <strong>чехлы для мобильных</strong>
+          {{ new Date().getFullYear() }} — <strong>shitcoincap</strong>
         </v-card-text>
       </v-card>
     </v-footer>
