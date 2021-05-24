@@ -3,7 +3,7 @@
 
   <v-sparkline
   v-if="vidtchatrs"
-    :value="value"
+    :value="value.reverse()"
     :gradient="gradient"
     :smooth="radius || false"
     :padding="padding"
@@ -16,7 +16,8 @@
     auto-draw
   ></v-sparkline>
   {{onPriceList}}
-  {{ontruevidt()}}
+  
+  {{ontruevidt()}} 
   </div>
 </template>
 
@@ -38,7 +39,7 @@
       padding: 8,
       lineCap: 'round',
       gradient: gradients[5],
-      value: [0, 2, 5, 9, 5, 10, 3, 5, 0, 0, 1, 8, 2, 9, 0],
+      value: [],
       gradientDirection: 'top',
       gradients,
       fill: false,
@@ -48,7 +49,7 @@
     }),
         computed:{
             onPriceList(){
-          for (let val of Object.values(this.coin.board_price[0])){
+          for (let val of Object.values(this.coin.board_price)){
           this.value.push(val)
         }
       }

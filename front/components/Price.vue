@@ -38,12 +38,14 @@
     props:['coinprice'],
     computed:{
             onPriceList(){
-        for (let key of Object.keys(this.coinprice.board_price[0])){
+        for (let key of Object.keys(this.coinprice.board_price)){
           this.labels.push(key)
         }
-          for (let val of Object.values(this.coinprice.board_price[0])){
+          for (let val of Object.values(this.coinprice.board_price)){
           this.value.push(val)
         }
+        this.value.reverse()
+        
       }
     },
     methods:{

@@ -37,5 +37,8 @@
   },
   "VuetifyLogo": {
     "description": "Auto imported from components/VuetifyLogo.vue"
+  },
+  "Vv": {
+    "description": "Auto imported from components/vv.vue"
   }
 }

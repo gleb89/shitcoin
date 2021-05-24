@@ -4,14 +4,13 @@
       <img :src="coin.image" alt="" />
 
       <h2>{{ coin.name }}</h2>
-      <!-- <p v-for="i in coin.board_price" :key="i.id">{{Object.keys(i)}} {{Object.values(i)}}</p> -->
       <p><span>Цена:</span> $ {{ coin.price.toLocaleString() }}</p>
       <p class="onactive" :class="{ active: onProc(coin.price_exc) }">
         {{ coin.price_exc }} %/24h
       </p>
     </v-col>
     <v-col cols="12" class="header" justify="center" align="center">
-      <Info :coin="coin" />
+      <Info :coin="coin" :onsendComentParent="onsendComentParent" />
     </v-col>
   </v-row>
 </template>
@@ -31,6 +30,7 @@ export default {
       .then((coin) => {
         return { coin };
       });
+  
   },
   components: {
     Info,
@@ -43,6 +43,9 @@ export default {
         return false;
       }
     },
+    onsendComentParent(comment){
+            console.log(comment);
+          }
   },
   data() {
     return {

@@ -13,6 +13,7 @@ export { default as Price } from '../../components/Price.vue'
 export { default as Search } from '../../components/Search.vue'
 export { default as TableCoin } from '../../components/TableCoin.vue'
 export { default as VuetifyLogo } from '../../components/VuetifyLogo.vue'
+export { default as Vv } from '../../components/vv.vue'
 
 export const LazyAbout = import('../../components/About.vue' /* webpackChunkName: "components/about" */).then(c => wrapFunctional(c.default || c))
 export const LazyChatrs = import('../../components/Chatrs.vue' /* webpackChunkName: "components/chatrs" */).then(c => wrapFunctional(c.default || c))
@@ -27,3 +28,4 @@ export const LazyPrice = import('../../components/Price.vue' /* webpackChunkName
 export const LazySearch = import('../../components/Search.vue' /* webpackChunkName: "components/search" */).then(c => wrapFunctional(c.default || c))
 export const LazyTableCoin = import('../../components/TableCoin.vue' /* webpackChunkName: "components/table-coin" */).then(c => wrapFunctional(c.default || c))
 export const LazyVuetifyLogo = import('../../components/VuetifyLogo.vue' /* webpackChunkName: "components/vuetify-logo" */).then(c => wrapFunctional(c.default || c))
+export const LazyVv = import('../../components/vv.vue' /* webpackChunkName: "components/vv" */).then(c => wrapFunctional(c.default || c))
