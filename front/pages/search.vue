@@ -8,7 +8,7 @@
 import search from "~/components/Search.vue";
 export default {
     head:{
-    title:'Поиск чехлов'
+    title:'Поиск криптовалют'
   },
 
     layout: 'search',

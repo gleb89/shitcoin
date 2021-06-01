@@ -11,8 +11,8 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content:'Список криптовалют scam' },
-      { hid: 'keywords', name: 'keywords', content:'Список криптовалют scam' },
+      { hid: 'description', name: 'description', content:'Список scam криптовалют ' },
+      { hid: 'keywords', name: 'keywords', content:'Список scam криптовалют ' },
       {  name:"google-site-verification" ,content:"bHeIZQ04ZA4UvJt7nOyNfOzzNP1L_mBckQPSqhNSiFo" },
       {  name:"yandex-verification", content:"c02e6f7a3bf2a412"  },
     ],
