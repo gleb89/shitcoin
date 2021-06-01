@@ -24,8 +24,7 @@ export default {
     };
     const coin_id = Number(route.params.id);
     return $axios
-      .$get(`http://localhost:8000/api/v1/coins/${coin_id}`, {
-        headers: headers,
+      .$get(`https://apicrypto.ru/api/v1/coins/${coin_id}`, {
       })
       .then((coin) => {
         return { coin };

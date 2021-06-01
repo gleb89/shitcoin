@@ -13,17 +13,18 @@
     <v-tabs-items v-model="tab">
       <v-tab-item v-for="item in items" :key="item">
         <v-card color="basil" flat>
-          <v-card-text v-if="iteminfo === 'График'">
+          <!-- <v-card-text v-if="iteminfo === 'График'">
             <Price :coinprice="coinprice" />
-          </v-card-text>
+          </v-card-text> -->
           <v-card-text v-if="iteminfo === 'Описание'">
             <About :description="description" />
           </v-card-text>
           <v-card-text v-if="iteminfo === 'Рынки'">
             <Market :exchange="exchange" />
           </v-card-text>
-          <!-- <v-card-text class="coment-div" v-if="iteminfo === 'Коментарии'">
-            <div v-for="(comment, index) in comments" :key="index">
+          <v-card-text class="coment-div" v-if="iteminfo === 'Коментарии'">
+            <h3>Скоро появятся:)</h3>
+            <!-- <div v-for="(comment, index) in comments" :key="index">
               <div style="margin-bottom: 1rem" class="d-flex justify-start">
                 <v-card class="card-comment" elevation="6" outlined style="margin-bottom:1rem">
                   <v-card-title>юсер {{ comment.user }}</v-card-title>
@@ -52,8 +53,8 @@
                 :comments="comment.children"
               />
               
-            </div>
-          </v-card-text> -->
+            </div> -->
+          </v-card-text>
         </v-card>
       </v-tab-item>
     </v-tabs-items>
@@ -68,7 +69,7 @@ import Comments from "@/components/Comments";
 export default {
   async fetch() {
     this.comments = await fetch(
-      `http://localhost:8000/api/v1/comments?coin_id=${this.coin.id}`
+      `httpa://apicrypto.ru/api/v1/comments?coin_id=${this.coin.id}`
     ).then((res) => res.json());
   },
   props: ["coin", "onsendComentParent"],
@@ -89,9 +90,9 @@ export default {
       description: this.coin.description,
       tab: null,
       coinprice: this.coin,
-      iteminfo: "График",
+      iteminfo: "Описание",
       comments: [],
-      items: ["График", "Описание", "Рынки"],
+      items: [ "Описание", "Рынки","Коментарии"],
       methods: {},
     };
   },

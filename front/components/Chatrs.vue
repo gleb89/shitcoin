@@ -1,9 +1,9 @@
 <template>
 <div>
-
+  <p v-if="!vidtchatrs">{{ontruevidt()}}</p>
   <v-sparkline
-  v-if="vidtchatrs"
-    :value="value.reverse()"
+    v-if="vidtchatrs"
+    :value="Object.values(this.coin.board_price).reverse()"
     :gradient="gradient"
     :smooth="radius || false"
     :padding="padding"
@@ -14,10 +14,7 @@
     :type="type"
     :auto-line-width="autoLineWidth"
     auto-draw
-  ></v-sparkline>
-  {{onPriceList}}
-  
-  {{ontruevidt()}} 
+  ></v-sparkline> 
   </div>
 </template>
 
@@ -34,6 +31,7 @@
   export default {
     props:['coin'],
     data: () => ({
+      count:0,
       width: 4,
       radius: 10,
       padding: 8,
@@ -48,16 +46,12 @@
       vidtchatrs:false
     }),
         computed:{
-            onPriceList(){
-          for (let val of Object.values(this.coin.board_price)){
-          this.value.push(val)
-        }
-      }
     },
     methods:{
       ontruevidt(){
-      setTimeout(() => this.vidtchatrs = true, 1000);
+        setTimeout(() => this.vidtchatrs = true, 1000);
     },
+
     }
     
   }

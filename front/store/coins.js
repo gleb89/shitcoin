@@ -22,7 +22,7 @@ export const state = () => {
             "Content-Type": "application/json"
           };
         const coins = await this.$axios
-        .$get(`http://localhost:8000/api/v1/coinslist/`,{
+        .$get(`https://apicrypto.ru/api/v1/coinslist/`,{
           headers: headers
         })
         commit('setcoins',coins)

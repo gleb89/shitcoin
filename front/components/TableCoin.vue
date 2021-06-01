@@ -31,7 +31,7 @@
               {{ coin.name }}
             </td>
             <td style="height: 5rem; width: 3rem; font-weight: bold">
-              <!-- ${{ onCap(coin.price) }} -->
+              ${{ onCap(coin.price) }}
             </td>
             <td style="height: 5rem; width: 3rem; font-weight: bold">
               ${{ onCap(coin.market_cap) }}
@@ -81,9 +81,7 @@ export default {
       let newcap = Number(cap);
       return newcap.toLocaleString();
     },
-    onImage(image) {
-      return `http://localhost:8000${image}`;
-    },
+
   },
   data() {
     return {

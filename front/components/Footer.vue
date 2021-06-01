@@ -11,9 +11,13 @@
         class="blue lighten-1 text-center"
       >
         <v-card-text>
+  
+          <p>
+                <NuxtLink style="color:white" to="/omne">Суть приложения</NuxtLink>
+          </p>
           <p>
             <a style="color:white;" href="tg://resolve?domain=hleb89">telegram</a>
-          </p>   
+        </p>
         </v-card-text>
 
         <v-divider></v-divider>

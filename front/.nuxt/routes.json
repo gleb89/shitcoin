@@ -14,6 +14,13 @@
     "_name": "_0218ee1a"
   },
   {
+    "name": "omne",
+    "path": "/omne",
+    "component": "/home/ubuntu/shitcoinproject/shitscoin-front/front/pages/omne.vue",
+    "chunkName": "pages/omne",
+    "_name": "_1d67d0f6"
+  },
+  {
     "name": "search",
     "path": "/search",
     "component": "/home/ubuntu/shitcoinproject/shitscoin-front/front/pages/search.vue",

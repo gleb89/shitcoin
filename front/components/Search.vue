@@ -81,9 +81,6 @@
       onHome(){
         this.$router.go(-1);
       },
-      onImage(image){
-      return `http://localhost:8000${image}`
-    },
       onPagecase(coin){
         this.$router.push('/coins_list/'+coin) 
       }

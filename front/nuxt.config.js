@@ -45,6 +45,10 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 
+  server: {
+    port: 80 // default: 3000
+  },
+
   fontawesome:{
     component:'fa',
     icons:{

@@ -44,7 +44,7 @@ export default {
           "Content-Type": "application/json"
         };
         this.$axios
-          .$get(`http://localhost:8000/api/v1/coins?page=${page}`, {
+          .$get(`https://apicrypto.ru/api/v1/coins?page=${page}`, {
             headers: headers
           })
           .then(response => {
@@ -59,7 +59,7 @@ export default {
       };
       const user_id = Number(route.params.id)
        return $axios
-        .$get(`http://localhost:8000/api/v1/coins`, {
+        .$get(`https://apicrypto.ru/api/v1/coins`, {
           headers: headers
         })
         .then(

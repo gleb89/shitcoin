@@ -6,6 +6,7 @@ import scrollBehavior from './router.scrollBehavior.js'
 
 const _3338f124 = () => interopDefault(import('../pages/coins_list/index.vue' /* webpackChunkName: "pages/coins_list/index" */))
 const _0218ee1a = () => interopDefault(import('../pages/inspire.vue' /* webpackChunkName: "pages/inspire" */))
+const _1d67d0f6 = () => interopDefault(import('../pages/omne.vue' /* webpackChunkName: "pages/omne" */))
 const _7f182cd0 = () => interopDefault(import('../pages/search.vue' /* webpackChunkName: "pages/search" */))
 const _a32ee554 = () => interopDefault(import('../pages/coins_list/_id.vue' /* webpackChunkName: "pages/coins_list/_id" */))
 const _19713212 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
@@ -29,6 +30,10 @@ export const routerOptions = {
     path: "/inspire",
     component: _0218ee1a,
     name: "inspire"
+  }, {
+    path: "/omne",
+    component: _1d67d0f6,
+    name: "omne"
   }, {
     path: "/search",
     component: _7f182cd0,
