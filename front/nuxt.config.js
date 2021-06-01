@@ -17,6 +17,10 @@ export default {
       {  name:"yandex-verification", content:"c02e6f7a3bf2a412"  },
     ],
   },
+  link: [
+    // {rel:'manifest',href: 'js13kpwa.webmanifest'},
+    { rel: 'icon', type: 'image/png', href: '/call.png' }
+  ]
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
