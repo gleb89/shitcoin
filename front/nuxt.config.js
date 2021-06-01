@@ -13,8 +13,8 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content:'Список криптовалют scam' },
       { hid: 'keywords', name: 'keywords', content:'Список криптовалют scam' },
-      // {  name: 'yandex-verification', content:'4ad66f1fe504558e' },
-      // {  name: 'google-site-verification', content:'q3H8Cs5b96o9Ej44WuoFaeZ6c02hqprTBHUdUDnhoJ8' },
+      {  name:"google-site-verification" ,content:"bHeIZQ04ZA4UvJt7nOyNfOzzNP1L_mBckQPSqhNSiFo" },
+      {  name:"yandex-verification", content:"c02e6f7a3bf2a412"  },
     ],
   },
 
