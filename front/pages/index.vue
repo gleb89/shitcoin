@@ -31,6 +31,13 @@
 <script>
 import TableCoin from "@/components/TableCoin";
 export default {
+      head:{
+    title:'Главная'
+  },
+    meta:[
+    { hid: 'description', name: 'description', content:'список криптовалют shitcoinmarketcap' },
+    { hid: 'homepage', name: 'keywords', content:'список криптовалют' }
+  ],
     data(){
       return{
         page: 1,

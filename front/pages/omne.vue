@@ -49,6 +49,18 @@
     </div>
 </template>
 
+<script>
+export default {
+          head:{
+    title:'Зачем криптовалюты'
+  },
+    meta:[
+    { hid: 'description', name: 'description', content:'Зачем этот проект' },
+    { hid: 'homepage', name: 'keywords', content:'список криптовалют' }
+  ],
+}
+</script>
+
 <style scoped>
 .omne{
     margin-top: 4rem;

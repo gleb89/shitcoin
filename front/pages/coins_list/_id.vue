@@ -18,6 +18,13 @@
 <script>
 import Info from "@/components/Info";
 export default {
+        head:{
+    title:'Главная'
+  },
+    meta:[
+    { hid: 'description', name: 'description', content:'список криптовалют shitcoinmarketcap' },
+    { hid: 'homepage', name: 'keywords', content:'список криптовалют' }
+  ],
   asyncData({ $axios, route, error }) {
     const headers = {
       "Content-Type": "application/json",
