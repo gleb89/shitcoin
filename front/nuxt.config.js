@@ -19,7 +19,7 @@ export default {
   },
   link: [
     // {rel:'manifest',href: 'js13kpwa.webmanifest'},
-    { rel: 'icon', type: 'image/png', href: '/call.png' }
+    { rel: 'icon', type: 'image/x-icon', href: '/call.png' }
   ],
 
   // Global CSS: https://go.nuxtjs.dev/config-css
