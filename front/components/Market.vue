@@ -1,9 +1,12 @@
 <template>
     <div>
         <div v-for="market of exchange" :key="market.id">
-            <p>
-            <a :href="market.trade_url">{{market.name}}</a>
-            </p>
+            <div>
+                <img style="width:20px" :src="market.image" alt=""> 
+                <br>
+            <a :href="market.trade_url"> {{market.name}}</a>
+            </div>
+            <p></p>
             
             
         </div>
