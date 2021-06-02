@@ -22,7 +22,7 @@
             :key="coin.name"
           >
             <td style="height: 5rem; width: 3rem; font-weight: bold">
-              {{ coin.id }}
+              {{ listcoins.results.indexOf(coin)+1 }}
             </td>
             <td style="height: 5rem; width: 3rem; font-weight: bold">
               <img style="width: 1rem" :src="coin.image" alt="" />
