@@ -20,7 +20,8 @@
       <TableCoin :listcoins="listcoins"/>
       <div class="text-center"> 
         {{paginationcoin}}
-      <v-pagination v-model="page" :length="Math.ceil(listcoins.count/10)" circle></v-pagination>
+      <!-- <v-pagination v-model="page" :length="Math.ceil(listcoins.count/10)" circle></v-pagination> -->
+       <v-pagination v-model="page" :length="page" circle></v-pagination>
     </div>
   </section>
 

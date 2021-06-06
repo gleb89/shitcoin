@@ -47,7 +47,8 @@
               {{ coin.price_exc }}%
             </td>
             <td style="height: 5rem; width: 3rem">
-             <Chatrs :coin="coin"/>
+          <Chatrs :coin="coin"/>
+
             </td>
           </tr>
         </tbody>
@@ -64,7 +65,8 @@ export default {
   components:{
     Chatrs
   },
-  computed: {},
+  computed: {
+  },
   methods: {
     onProc(price) {
       if (price[0] === "-") {
@@ -78,8 +80,8 @@ export default {
       this.$router.push("/coins_list/" + name);
     },
     onCap(cap) {
-      let newcap = Number(cap);
-      return newcap.toLocaleString();
+      let newcap = cap;
+      return newcap
     },
 
   },
