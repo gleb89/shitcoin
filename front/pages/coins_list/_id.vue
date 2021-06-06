@@ -3,7 +3,7 @@
     <v-col cols="12" class="header" justify="center" align="center">
       <img :src="coin.image" alt="" />
 
-      <h2>{{ coin.name }}</h2>
+      <h2>{{ coin.name }}({{coin.symbol}})</h2>
       <p><span>Цена:</span> $ {{ coin.price.toLocaleString() }}</p>
       <p class="onactive" :class="{ active: onProc(coin.price_exc) }">
         {{ coin.price_exc }} %/24h

@@ -28,7 +28,7 @@
               <img style="width: 1rem" :src="coin.image" alt="" />
             </td>
             <td style="height: 5rem; width: 6rem; font-weight: bold">
-              {{ coin.name }}
+              {{ coin.name }}({{coin.symbol}})
             </td>
             <td style="height: 5rem; width: 3rem; font-weight: bold">
               ${{ onCap(coin.price) }}
