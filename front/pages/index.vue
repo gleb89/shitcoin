@@ -13,7 +13,13 @@
         line-width="2"
         padding="16"
       ></v-sparkline>
+            <p @click="oMne" style="color:black;cursor:pointer;margin-bottom:4rem;background: aquamarine;">
+              
+                О сайте
+                <fa icon="arrow-alt-circle-right"></fa>
+          </p>
       </div>
+ 
     </v-col>
   </v-row>
     <section>
@@ -46,7 +52,9 @@ export default {
       }
     },
     methods:{
-      
+      oMne(){
+        this.$router.push('/omne')
+      },
     onData(page){
         const headers = {
           "Content-Type": "application/json"
