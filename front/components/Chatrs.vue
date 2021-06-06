@@ -23,7 +23,7 @@
     ['#222'],
     ['#42b3f4'],
     ['red', 'orange', 'yellow'],
-    ['purple', 'violet'],
+    ['purple', 'blue'],
     ['#00c6ff', '#F0F', '#FF0'],
     ['#f72047', '#ffd200', '#1feaea'],
   ]
@@ -32,7 +32,7 @@
     props:['coin'],
     data: () => ({
       count:0,
-      width: 4,
+      width: 10,
       radius: 10,
       padding: 8,
       lineCap: 'round',
