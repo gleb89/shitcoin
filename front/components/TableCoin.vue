@@ -31,7 +31,7 @@
               {{ coin.name }}({{coin.symbol}})
             </td>
             <td style="height: 5rem; width: 3rem; font-weight: bold">
-              ${{ onCap(coin.price) }}
+              ${{ Math.round((onCap(coin.price))*100000000)/100000000  }}
             </td>
             <td style="height: 5rem; width: 3rem; font-weight: bold">
               ${{ onCap(coin.market_cap) }}
@@ -81,6 +81,7 @@ export default {
     },
     onCap(cap) {
       let newcap = cap;
+      
       return newcap.toLocaleString()
     },
 
