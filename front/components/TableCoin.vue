@@ -81,7 +81,7 @@ export default {
     },
     onCap(cap) {
       let newcap = cap;
-      return newcap
+      return newcap.toLocaleString()
     },
 
   },
