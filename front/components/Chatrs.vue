@@ -1,5 +1,6 @@
 <template>
 <div>
+<div class="d-box">
   <p v-if="!vidtchatrs">{{ontruevidt()}}</p>
   <v-sparkline
     v-if="vidtchatrs"
@@ -7,7 +8,7 @@
     :gradient="gradient"
     :smooth="radius || false"
     :padding="padding"
-    :line-width="width"
+    line-width=4
     :stroke-linecap="lineCap"
     :gradient-direction="gradientDirection"
     :fill="fill"
@@ -15,6 +16,24 @@
     :auto-line-width="autoLineWidth"
     auto-draw
   ></v-sparkline> 
+  </div>
+<div class="mob-box">
+  <p v-if="!vidtchatrs">{{ontruevidt()}}</p>
+  <v-sparkline
+    v-if="vidtchatrs"
+    :value="Object.values(this.coin.board_price).reverse()"
+    :gradient="gradient"
+    :smooth="radius || false"
+    :padding="padding"
+    line-width=12
+    :stroke-linecap="lineCap"
+    :gradient-direction="gradientDirection"
+    :fill="fill"
+    :type="type"
+    :auto-line-width="autoLineWidth"
+    auto-draw
+  ></v-sparkline> 
+  </div>
   </div>
 </template>
 
@@ -57,3 +76,22 @@
   }
   
 </script>
+
+<style scoped>
+@media (max-width:500px) {
+  .d-box{
+  display: none;
+}
+}
+@media (max-width:500px) {
+  .mob-box{
+  display: block;
+}
+}
+@media (min-width:510px) {
+  .mob-box{
+  display: none;
+}
+}
+
+</style>
