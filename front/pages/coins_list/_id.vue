@@ -4,7 +4,9 @@
       <img :src="coin.image" alt="" />
 
       <h2>{{ coin.name }}({{coin.symbol}})</h2>
-      <p><span>Цена:</span> $ {{ coin.price.toLocaleString() }}</p>
+      <p><span>Price:  </span> <br> ${{ Math.round((coin.price)*100000000)/100000000  }}</p>
+      <p><span>Market cap:  </span> <br>  ${{ onCap(coin.market_cap)  }}</p> 
+      <p><span>Volume(24h):  </span> <br> ${{onCap(coin.volume) }}</p> 
       <p class="onactive" :class="{ active: onProc(coin.price_exc) }">
         {{ coin.price_exc }} %/24h
       </p>
@@ -42,6 +44,11 @@ export default {
     Info,
   },
   methods: {
+        onCap(cap) {
+      let newcap = cap;
+      
+      return newcap.toLocaleString()
+    },
     onProc(price) {
       if (price[0] === "-") {
         return true;
