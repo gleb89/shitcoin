@@ -34,8 +34,8 @@
         <v-img
           :src="item.image"
           class="mr-4"
-          max-width="64"
-          min-width="64"
+          max-width="20"
+          min-width="20"
         ></v-img>
 
         <v-list-item-content>
