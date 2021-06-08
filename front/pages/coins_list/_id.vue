@@ -4,12 +4,15 @@
       <img :src="coin.image" alt="" />
 
       <h2>{{ coin.name }}({{coin.symbol}})</h2>
-      <p><span>Price:  </span> <br> ${{ Math.round((coin.price)*100000000)/100000000  }}</p>
-      <p><span>Market cap:  </span> <br>  ${{ onCap(coin.market_cap)  }}</p> 
-      <p><span>Volume(24h):  </span> <br> ${{onCap(coin.volume) }}</p> 
-      <p class="onactive" :class="{ active: onProc(coin.price_exc) }">
-        {{ coin.price_exc }} %/24h
-      </p>
+
+      <p><span class="zag">Price:  </span> <br> ${{ Math.round((coin.price)*100000000)/100000000  }}(<span class="onactive" :class="{ active: onProc(coin.price_exc) }">
+        {{ coin.price_exc }} %/24h)
+      </span></p>
+
+
+      <p><span class="zag">Market cap:  </span> <br>  ${{ onCap(coin.market_cap)  }}</p> 
+      <p><span class="zag">Volume(24h):  </span> <br> ${{onCap(Number(coin.volume))}}</p> 
+
     </v-col>
     <v-col cols="12" class="header" justify="center" align="center">
       <Info :coin="coin" :onsendComentParent="onsendComentParent" />
@@ -76,4 +79,8 @@ export default {
 .active {
   color: #ea3943;
 }
+.zag{
+  font-weight: bold;
+}
+
 </style>

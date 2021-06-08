@@ -25,7 +25,7 @@
               {{ listcoins.results.indexOf(coin)+1 }}
             </td>
             <td style="height: 5rem; width: 3rem; font-weight: bold">
-              <img style="width: 1rem" :src="coin.image" alt="" />
+              <img style="width: 1.7rem" :src="coin.image" alt="coin image" />
             </td>
             <td style="height: 5rem; width: 6rem; font-weight: bold">
               {{ coin.name }}({{coin.symbol}})
@@ -37,7 +37,7 @@
               ${{ onCap(coin.market_cap) }}
             </td>
             <td style="height: 5rem; width: 3rem; font-weight: bold">
-              $ {{ onCap(coin.volume) }}
+              $ {{onCap(Number(coin.volume))}}
             </td>
             <td
               class="onactive"
