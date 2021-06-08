@@ -16,7 +16,7 @@
       <v-text-field
         v-model="serch_coins"
         append-icon="mdi-magnify"
-        label="пример: btc "
+        label="example: btc or bitcoin"
         single-line
       ></v-text-field>
     </v-toolbar>
@@ -68,7 +68,7 @@
         coins_list(){
         if(this.serch_coins != ''){
           return this.coins.filter(element =>{
-            return element.symbol.toLowerCase().includes(this.serch_coins.toLowerCase())
+            return element.symbol.toLowerCase().includes(this.serch_coins.toLowerCase()) || element.name.toLowerCase().includes(this.serch_coins.toLowerCase())
           })
             
        }
