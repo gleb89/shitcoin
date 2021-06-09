@@ -39,7 +39,7 @@
 import TableCoin from "@/components/TableCoin";
 export default {
       head:{
-    title:'Главная'
+    title:'Список scam crypto'
   },
     meta:[
     { hid: 'description', name: 'description', content:'список криптовалют shitcoinmarketcap' },
