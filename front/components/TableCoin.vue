@@ -28,7 +28,7 @@
               <img style="width: 1.7rem" :src="coin.image" alt="coin image" />
             </td>
             <td style="height: 5rem; width: 6rem; font-weight: bold">
-              {{ coin.name }}({{coin.symbol}})
+              <h4>{{ coin.name }}({{coin.symbol}})</h4>
             </td>
             <td style="height: 5rem; width: 3rem; font-weight: bold">
               ${{ Math.round((onCap(coin.price))*100000000)/100000000  }}

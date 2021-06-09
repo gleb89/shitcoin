@@ -13,10 +13,10 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_e499e914 from 'nuxt_plugin_plugin_e499e914' // Source: ./components/plugin.js (mode: 'all')
-import nuxt_plugin_plugin_9f824790 from 'nuxt_plugin_plugin_9f824790' // Source: ./vuetify/plugin.js (mode: 'all')
-import nuxt_plugin_axios_7822378c from 'nuxt_plugin_axios_7822378c' // Source: ./axios.js (mode: 'all')
-import nuxt_plugin_fontawesome_b1099c64 from 'nuxt_plugin_fontawesome_b1099c64' // Source: ./fontawesome.js (mode: 'all')
+import nuxt_plugin_plugin_5d9a59e3 from 'nuxt_plugin_plugin_5d9a59e3' // Source: ./components/plugin.js (mode: 'all')
+import nuxt_plugin_plugin_49eeeceb from 'nuxt_plugin_plugin_49eeeceb' // Source: ./vuetify/plugin.js (mode: 'all')
+import nuxt_plugin_axios_1f220179 from 'nuxt_plugin_axios_1f220179' // Source: ./axios.js (mode: 'all')
+import nuxt_plugin_fontawesome_de35d40a from 'nuxt_plugin_fontawesome_de35d40a' // Source: ./fontawesome.js (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -84,7 +84,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"titleTemplate":"%s - shitcoincap","title":"shitcoincap -список криптовалют","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Список scam криптовалют "},{"hid":"keywords","name":"keywords","content":"Список scam криптовалют "},{"name":"google-site-verification","content":"bHeIZQ04ZA4UvJt7nOyNfOzzNP1L_mBckQPSqhNSiFo"},{"name":"yandex-verification","content":"c02e6f7a3bf2a412"}],"link":[{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Roboto:100,300,400,500,700,900&display=swap"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fnpm\u002F@mdi\u002Ffont@latest\u002Fcss\u002Fmaterialdesignicons.min.css"}],"style":[],"script":[]},
+    head: {"titleTemplate":"shitcoincap -список scam  криптовалют","title":"shitcoincap -список scam криптовалют","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Список scam криптовалют "},{"hid":"keywords","name":"keywords","content":"Список scam криптовалют "},{"name":"google-site-verification","content":"bHeIZQ04ZA4UvJt7nOyNfOzzNP1L_mBckQPSqhNSiFo"},{"name":"yandex-verification","content":"c02e6f7a3bf2a412"}],"link":[{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Roboto:100,300,400,500,700,900&display=swap"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fnpm\u002F@mdi\u002Ffont@latest\u002Fcss\u002Fmaterialdesignicons.min.css"}],"style":[],"script":[]},
 
     store,
     router,
@@ -213,20 +213,20 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_e499e914 === 'function') {
-    await nuxt_plugin_plugin_e499e914(app.context, inject)
+  if (typeof nuxt_plugin_plugin_5d9a59e3 === 'function') {
+    await nuxt_plugin_plugin_5d9a59e3(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_plugin_9f824790 === 'function') {
-    await nuxt_plugin_plugin_9f824790(app.context, inject)
+  if (typeof nuxt_plugin_plugin_49eeeceb === 'function') {
+    await nuxt_plugin_plugin_49eeeceb(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_axios_7822378c === 'function') {
-    await nuxt_plugin_axios_7822378c(app.context, inject)
+  if (typeof nuxt_plugin_axios_1f220179 === 'function') {
+    await nuxt_plugin_axios_1f220179(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_fontawesome_b1099c64 === 'function') {
-    await nuxt_plugin_fontawesome_b1099c64(app.context, inject)
+  if (typeof nuxt_plugin_fontawesome_de35d40a === 'function') {
+    await nuxt_plugin_fontawesome_de35d40a(app.context, inject)
   }
 
   // Lock enablePreview in context

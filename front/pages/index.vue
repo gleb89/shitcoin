@@ -43,7 +43,7 @@ export default {
   },
     meta:[
     { hid: 'description', name: 'description', content:'список криптовалют shitcoinmarketcap' },
-    { hid: 'homepage', name: 'keywords', content:'список криптовалют' }
+    { hid: 'homepage', name: 'keywords', content:'Список scam crypto' }
   ],
     data(){
       return{

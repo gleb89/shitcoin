@@ -24,7 +24,7 @@
 import Info from "@/components/Info";
 export default {
         head:{
-    title:'Главная'
+    title:'Coin page'
   },
     meta:[
     { hid: 'description', name: 'description', content:'список криптовалют shitcoinmarketcap' },

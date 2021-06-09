@@ -4,12 +4,12 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _5d6917ae = () => interopDefault(import('../pages/coins_list/index.vue' /* webpackChunkName: "pages/coins_list/index" */))
-const _fa77d44c = () => interopDefault(import('../pages/inspire.vue' /* webpackChunkName: "pages/inspire" */))
-const _cc0ff076 = () => interopDefault(import('../pages/omne.vue' /* webpackChunkName: "pages/omne" */))
-const _24366c50 = () => interopDefault(import('../pages/search.vue' /* webpackChunkName: "pages/search" */))
-const _5e152d96 = () => interopDefault(import('../pages/coins_list/_id.vue' /* webpackChunkName: "pages/coins_list/_id" */))
-const _f3796c5c = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _2d50661b = () => interopDefault(import('../pages/coins_list/index.vue' /* webpackChunkName: "pages/coins_list/index" */))
+const _632f68cd = () => interopDefault(import('../pages/inspire.vue' /* webpackChunkName: "pages/inspire" */))
+const _40f7d1b2 = () => interopDefault(import('../pages/omne.vue' /* webpackChunkName: "pages/omne" */))
+const _57cc66f6 = () => interopDefault(import('../pages/search.vue' /* webpackChunkName: "pages/search" */))
+const _0b31997a = () => interopDefault(import('../pages/coins_list/_id.vue' /* webpackChunkName: "pages/coins_list/_id" */))
+const _818684f6 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
 
@@ -24,27 +24,27 @@ export const routerOptions = {
 
   routes: [{
     path: "/coins_list",
-    component: _5d6917ae,
+    component: _2d50661b,
     name: "coins_list"
   }, {
     path: "/inspire",
-    component: _fa77d44c,
+    component: _632f68cd,
     name: "inspire"
   }, {
     path: "/omne",
-    component: _cc0ff076,
+    component: _40f7d1b2,
     name: "omne"
   }, {
     path: "/search",
-    component: _24366c50,
+    component: _57cc66f6,
     name: "search"
   }, {
     path: "/coins_list/:id",
-    component: _5e152d96,
+    component: _0b31997a,
     name: "coins_list-id"
   }, {
     path: "/",
-    component: _f3796c5c,
+    component: _818684f6,
     name: "index"
   }],
 
