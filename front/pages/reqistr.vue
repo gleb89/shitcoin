@@ -125,13 +125,13 @@ methods: {
 },
   googleSignin() {
    firebase.auth()
-   
    .signInWithPopup(provider).then(function(result) {
       var token = result.credential.accessToken;
       var user = result.user;
 		
       console.log(token)
-      this.uid = user.displayName
+      console.log(user.displayName);
+      
    }).catch(function(error) {
       var errorCode = error.code;
       var errorMessage = error.message;
@@ -140,6 +140,7 @@ methods: {
       console.log(error.message)
    });
 },
+
 googleSignout() {
    firebase.auth().signOut()
 	
