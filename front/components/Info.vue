@@ -23,7 +23,10 @@
             <Market :exchange="exchange" />
           </v-card-text>
           <v-card-text class="coment-div" v-if="iteminfo === 'Коментарии'">
-            <h3>Скоро появятся:)</h3>
+            <!-- <h3>Скоро появятся:)</h3> -->
+            <div v-for="i in 4" :key="i" style="margin-bottom:3rem">
+            <Comments/>
+            </div>
             <!-- <div v-for="(comment, index) in comments" :key="index">
               <div style="margin-bottom: 1rem" class="d-flex justify-start">
                 <v-card class="card-comment" elevation="6" outlined style="margin-bottom:1rem">

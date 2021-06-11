@@ -17,6 +17,7 @@ import nuxt_plugin_plugin_5d9a59e3 from 'nuxt_plugin_plugin_5d9a59e3' // Source:
 import nuxt_plugin_plugin_49eeeceb from 'nuxt_plugin_plugin_49eeeceb' // Source: ./vuetify/plugin.js (mode: 'all')
 import nuxt_plugin_axios_1f220179 from 'nuxt_plugin_axios_1f220179' // Source: ./axios.js (mode: 'all')
 import nuxt_plugin_fontawesome_de35d40a from 'nuxt_plugin_fontawesome_de35d40a' // Source: ./fontawesome.js (mode: 'all')
+import nuxt_plugin_firebase_34d6f55a from 'nuxt_plugin_firebase_34d6f55a' // Source: ../plugins/firebase.js (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -227,6 +228,10 @@ async function createApp(ssrContext, config = {}) {
 
   if (typeof nuxt_plugin_fontawesome_de35d40a === 'function') {
     await nuxt_plugin_fontawesome_de35d40a(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_firebase_34d6f55a === 'function') {
+    await nuxt_plugin_firebase_34d6f55a(app.context, inject)
   }
 
   // Lock enablePreview in context

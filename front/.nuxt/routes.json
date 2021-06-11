@@ -21,6 +21,13 @@
     "_name": "_40f7d1b2"
   },
   {
+    "name": "reqistr",
+    "path": "/reqistr",
+    "component": "/home/ubuntu/projects/front/shitcoin/front/pages/reqistr.vue",
+    "chunkName": "pages/reqistr",
+    "_name": "_1e12d2b9"
+  },
+  {
     "name": "search",
     "path": "/search",
     "component": "/home/ubuntu/projects/front/shitcoin/front/pages/search.vue",

@@ -16,7 +16,14 @@ export default {
       {  name:"google-site-verification" ,content:"bHeIZQ04ZA4UvJt7nOyNfOzzNP1L_mBckQPSqhNSiFo" },
       {  name:"yandex-verification", content:"c02e6f7a3bf2a412"  },
     ],
+
   },
+  script: [
+    {
+      src: "https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js",
+      src: "https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"
+    }
+  ],
   link: [
     // {rel:'manifest',href: 'js13kpwa.webmanifest'},
    
@@ -27,8 +34,7 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-  ],
+  plugins: ['~/plugins/firebase.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -62,6 +68,7 @@ export default {
   
   
   },
+
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {

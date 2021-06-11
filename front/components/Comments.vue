@@ -1,33 +1,41 @@
 <template>
-  <div >
-    <div class="box-card" v-for="(comment, index) in comments" :key="index">
-                <v-card class="card-comment" elevation="6" outlined style="margin-bottom:4rem">
-                  <v-card-title>юсер {{ comment.user }}</v-card-title>
-                  
-                  <v-card-text>
-                  ответ user {{comment.user_parent}}:  {{ comment.text_comment }}
-                  </v-card-text>
-                      <v-card-actions class="d-flex justify-end">
-      <v-btn
-        color="deep-purple lighten-2"
-        text
-        @click="onsendComentParent(comment.text_comment)"
-      >
-        Ответить
-      </v-btn>
-    </v-card-actions >
-                  <br />
-                </v-card>
-        
-          <Comments
-          v-if="comment.children && comment.children.length"
-            :comments="comment.children"
-            :onsendComentParent="onsendComentParent"
-          />
-        
-      
-    </div>
-  </div>
+  <v-card
+    class="mx-auto"
+    color="#26c6da"
+    dark
+    max-width="400"
+  >
+
+    <v-card-text class="text-h5 font-weight-bold">
+      "Turns out semicolon-less style is easier and safer in TS because most gotcha edge cases are type invalid as well."
+    </v-card-text>
+
+    <v-card-actions>
+      <v-list-item class="grow">
+        <v-list-item-avatar color="grey darken-3">
+          <v-img
+            class="elevation-6"
+            alt=""
+            src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=White&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light"
+          ></v-img>
+        </v-list-item-avatar>
+
+        <v-list-item-content>
+          <v-list-item-title>Evan You</v-list-item-title>
+        </v-list-item-content>
+
+        <v-row
+          align="center"
+          justify="end"
+        >
+          <v-icon class="mr-1">
+            mdi-calendar-blank
+          </v-icon>
+         25-03-2021
+        </v-row>
+      </v-list-item>
+    </v-card-actions>
+  </v-card>
 </template>
 
 
@@ -37,6 +45,7 @@ export default {
   name: "Comments",
   props: ["comments", "onsendComentParent"],
   data: () => ({
+    isActive: false,
     rrr: false,
   }),
   components: {

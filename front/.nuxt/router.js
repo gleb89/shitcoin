@@ -7,6 +7,7 @@ import scrollBehavior from './router.scrollBehavior.js'
 const _2d50661b = () => interopDefault(import('../pages/coins_list/index.vue' /* webpackChunkName: "pages/coins_list/index" */))
 const _632f68cd = () => interopDefault(import('../pages/inspire.vue' /* webpackChunkName: "pages/inspire" */))
 const _40f7d1b2 = () => interopDefault(import('../pages/omne.vue' /* webpackChunkName: "pages/omne" */))
+const _1e12d2b9 = () => interopDefault(import('../pages/reqistr.vue' /* webpackChunkName: "pages/reqistr" */))
 const _57cc66f6 = () => interopDefault(import('../pages/search.vue' /* webpackChunkName: "pages/search" */))
 const _0b31997a = () => interopDefault(import('../pages/coins_list/_id.vue' /* webpackChunkName: "pages/coins_list/_id" */))
 const _818684f6 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
@@ -34,6 +35,10 @@ export const routerOptions = {
     path: "/omne",
     component: _40f7d1b2,
     name: "omne"
+  }, {
+    path: "/reqistr",
+    component: _1e12d2b9,
+    name: "reqistr"
   }, {
     path: "/search",
     component: _57cc66f6,
