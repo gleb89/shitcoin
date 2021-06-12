@@ -1,54 +1,170 @@
 <template>
-<v-dialog
-      v-model="dialog"
-      max-width="290"
-    >
-      <v-card>
-        <v-card-title class="text-h5">
-          Use Google's location service?
-        </v-card-title>
-
-        <v-card-text>
-          {{signStyle}}
-          Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.
-        </v-card-text>
-
-        <v-card-actions>
-          <v-spacer></v-spacer>
-
-          <v-btn
-            color="green darken-1"
-            text
-            @click="dialog = false"
-          >
-            Disagree
-          </v-btn>
-
-          <v-btn
-            color="green darken-1"
-            text
-            @click="dialog = false"
-          >
-            Agree
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
+  <div>
+    <div v-if="!sign">
+      <v-btn @click="googleSignin()" class="btn">
+        вход с Google <img src="/google.png" alt="" />
+      </v-btn>
+      <p></p>
+      <v-btn class="btn"> вход по номеру телефона </v-btn>
+    </div>
+    <div v-if="sign">
+      <v-alert type="success">Успешно!</v-alert>
+    </div>
+  </div>
 </template>
 
 <script>
+import firebase from 'firebase'
 
+var provider = new firebase.auth.GoogleAuthProvider();
 export default {
-  computed:{
-  signStyle(){
-    if (process.browser){ 
-      
-      console.log(window.document.querySelector('#v-overlay__scrim')); 
-   
-    }
+    created(){
+  if (process.browser){ 
+window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('sign-in-button', {
+  'size': 'invisible',
+  'callback': (response) => {
+    // reCAPTCHA solved, allow signInWithPhoneNumber.
+    onSignInSubmit();
   }
+});
   
-},
-    props:['dialog']
-}
+  }
+  },
+  data() {
+    return {
+      sign: false,
+    };
+  },
+  methods: {
+    phoneSign() {
+      // const phoneNumber = getPhoneNumberFromUserInput();
+      let appVerifier = window.recaptchaVerifier;
+
+      firebase
+        .auth()
+        .signInWithPhoneNumber(this.phone, appVerifier)
+
+        .then((confirmationResult) => {
+          // SMS sent. Prompt user to type the code from the message, then sign the
+          // user in with confirmationResult.confirm(code).
+          window.confirmationResult = confirmationResult;
+          console.log(confirmationResult);
+          console.log("kkk");
+        })
+        .catch((error) => {
+          console.log("eeror");
+          console.log(error);
+        });
+    },
+    codeSignin() {
+      // const code = getCodeFromUserInput();
+      confirmationResult
+        .confirm(this.code)
+        .then((result) => {
+          // User signed in successfully.
+          const user = result.user;
+          this.uid = user.uid;
+
+          // ...
+        })
+        .catch((error) => {
+          console.log("error");
+        });
+    },
+    appleSignin() {
+      firebase
+        .auth()
+
+        .signInWithPopup(provider_apple)
+        .then(function (result) {
+          var token = result.credential.accessToken;
+          var user = result.user;
+
+          console.log(token);
+          console.log(user.displayName);
+        })
+        .catch(function (error) {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+
+          console.log(error.code);
+          console.log(error.message);
+        });
+    },
+    googleSignin() {
+      firebase
+        .auth()
+        .signInWithPopup(provider)
+        .then(function (result) {
+          var token = result.credential.accessToken;
+          var user = result.user;
+          this.sign = true;
+          setTimeout((console.log('kkk')), 2000);
+        })
+        .catch(function (error) {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+
+          console.log(error.code);
+          console.log(error.message);
+        });
+    },
+
+    googleSignout() {
+      firebase
+        .auth()
+        .signOut()
+
+        .then(
+          function () {
+            console.log("Signout Succesfull");
+          },
+          function (error) {
+            console.log("Signout Failed");
+          }
+        );
+    },
+    login() {
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(this.email, this.password)
+        .then((userCredential) => {
+          // Signed in
+          var user = userCredential.user;
+          console.log(user.uid);
+        })
+        .catch((error) => {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+        });
+    },
+    register() {
+      firebase
+        .auth()
+        .createUserWithEmailAndPassword(this.email, this.password)
+        .then((userCredential) => {
+          // Signed in
+          var user = userCredential.user;
+          console.log(user.uid);
+          // ...
+        })
+        .catch((error) => {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          // ..
+        });
+    },
+  },
+};
 </script>
+
+<style scoped>
+img {
+  width: 2rem;
+}
+.btn {
+  width: 100%;
+  background: white;
+  font-size: 0.6rem;
+}
+</style>

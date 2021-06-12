@@ -3,7 +3,7 @@
  <!-- App.vue -->
 
 <v-app class="apps"  >
-<Navigation :onSign="onSign" :dialog="dialog" />
+<Navigation  :dialog="dialog" />
   <!-- Sizes your content based upon application components -->
   <v-main>
     
@@ -14,7 +14,7 @@
     <v-container fluid>
       <!-- If using vue-router -->
 
-      <!-- <Signin :dialog="dialog"  @click="onDontSign()"/> -->
+      
    
         <Nuxt />
 
@@ -63,17 +63,7 @@ export default {
     }
   },
   methods:{
-    onSign(){
-      
-      this.dialog = !this.dialog
-      console.log(this.dialog);
-    },
-    onDontSign(){
-      console.log('hhhh');
-      if (this.dialog === true){
-        this.dialog = false
-      }
-    }
+
   }
 }
 </script>

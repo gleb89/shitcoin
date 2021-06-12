@@ -24,20 +24,21 @@
      </div>
   </v-bottom-navigation>
   <v-dialog
+  width="500"
       v-model="dialog"
-      max-width="290"
     >
-      <v-card>
-        В режиме разработки
+      <v-card style="padding:1rem" >
+        
+        <Signin/>
                 <v-card-actions>
           <v-spacer></v-spacer>
 
           <v-btn
-            color="green darken-1"
+            style="font-size:0.8rem"
             text
             @click="dialog = false"
           >
-            Close
+            Закрыть
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -47,8 +48,9 @@
 
 <script>
 import Lang from "@/components/Lang";
+import Signin from '@/components/Signin';
 export default {
-  // props:['onSign'],
+  
   data: () => ({
       value:1,
       dialog:false
@@ -59,7 +61,8 @@ export default {
 
   },
   components:{
-      Lang
+      Lang,
+      Signin
   },
   methods: {
         onSign(){
@@ -97,4 +100,6 @@ export default {
     display: none;
   }
 } */
+
+
 </style>
