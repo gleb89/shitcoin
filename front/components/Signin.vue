@@ -92,13 +92,15 @@ window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('sign-in-button',
         });
     },
     googleSignin() {
+      var self = this
       firebase
         .auth()
         .signInWithPopup(provider)
         .then(function (result) {
           var token = result.credential.accessToken;
           var user = result.user;
-          this.sign = true;
+          self.sign = true;
+          
           setTimeout((console.log('kkk')), 2000);
         })
         .catch(function (error) {
