@@ -11,7 +11,7 @@
           v-bind="attrs"
           v-on="on"
         >
-        Язык
+        <span>Язык</span>
           <fa icon="angle-down"></fa>
         </v-btn>
       </template>
@@ -39,3 +39,11 @@
     }),
   }
 </script>
+
+<style scoped>
+@media (max-width: 500px) {
+  span {
+    font-size: 9px;
+  }
+}
+</style>
