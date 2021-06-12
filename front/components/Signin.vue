@@ -8,7 +8,7 @@
       <v-btn class="btn"> вход по номеру телефона </v-btn>
     </div>
     <div v-if="sign">
-      <v-alert style="box-shadow: 4px 4px 4px #0000004f;" type="success">Успешно!</v-alert>
+      <v-alert style="box-shadow: 4px 4px 4px #0000004f;" type="success">Привет {{google_name}}</v-alert>
     </div>
   </div>
 </template>
@@ -33,6 +33,7 @@ window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('sign-in-button',
   data() {
     return {
       sign: false,
+      google_name:''
     };
   },
   methods: {
@@ -100,6 +101,7 @@ window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('sign-in-button',
           var token = result.credential.accessToken;
           var user = result.user;
           self.sign = true;
+          self.google_name = user.displayName
           
           setTimeout((console.log('kkk')), 2000);
         })
