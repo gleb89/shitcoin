@@ -17,6 +17,7 @@ You can directly use them in pages and other components without the need to impo
 - `<Navigation>` | `<navigation>` (components/Navigation.vue)
 - `<Price>` | `<price>` (components/Price.vue)
 - `<Search>` | `<search>` (components/Search.vue)
+- `<Signin>` | `<signin>` (components/Signin.vue)
 - `<TableCoin>` | `<table-coin>` (components/TableCoin.vue)
 - `<VuetifyLogo>` | `<vuetify-logo>` (components/VuetifyLogo.vue)
 - `<Vv>` | `<vv>` (components/vv.vue)

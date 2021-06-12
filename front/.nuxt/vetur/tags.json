@@ -32,6 +32,9 @@
   "Search": {
     "description": "Auto imported from components/Search.vue"
   },
+  "Signin": {
+    "description": "Auto imported from components/Signin.vue"
+  },
   "TableCoin": {
     "description": "Auto imported from components/TableCoin.vue"
   },

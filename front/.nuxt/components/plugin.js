@@ -13,6 +13,7 @@ const components = {
   Navigation: () => import('../../components/Navigation.vue' /* webpackChunkName: "components/navigation" */).then(c => wrapFunctional(c.default || c)),
   Price: () => import('../../components/Price.vue' /* webpackChunkName: "components/price" */).then(c => wrapFunctional(c.default || c)),
   Search: () => import('../../components/Search.vue' /* webpackChunkName: "components/search" */).then(c => wrapFunctional(c.default || c)),
+  Signin: () => import('../../components/Signin.vue' /* webpackChunkName: "components/signin" */).then(c => wrapFunctional(c.default || c)),
   TableCoin: () => import('../../components/TableCoin.vue' /* webpackChunkName: "components/table-coin" */).then(c => wrapFunctional(c.default || c)),
   VuetifyLogo: () => import('../../components/VuetifyLogo.vue' /* webpackChunkName: "components/vuetify-logo" */).then(c => wrapFunctional(c.default || c)),
   Vv: () => import('../../components/vv.vue' /* webpackChunkName: "components/vv" */).then(c => wrapFunctional(c.default || c))
