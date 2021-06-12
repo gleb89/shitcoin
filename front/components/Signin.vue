@@ -8,7 +8,7 @@
       <v-btn class="btn"> вход по номеру телефона </v-btn>
     </div>
     <div v-if="sign">
-      <v-alert type="success">Успешно!</v-alert>
+      <v-alert style="box-shadow: 4px 4px 4px #0000004f;" type="success">Успешно!</v-alert>
     </div>
   </div>
 </template>
