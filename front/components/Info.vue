@@ -25,6 +25,7 @@
           <v-card-text class="coment-div" v-if="iteminfo === 'Коментарии'">
             <!-- <h3>Скоро появятся:)</h3> -->
             <div v-for="i in 4" :key="i" style="margin-bottom:3rem">
+              <h6 style="font-size:1rem;margin-bottom: 2rem;background: aquamarine;">В режиме разработки!</h6>
             <Comments/>
             </div>
             <!-- <div v-for="(comment, index) in comments" :key="index">
