@@ -65,8 +65,6 @@ export default {
       solid:true,
       brands:true
     }
-  
-  
   },
 
 

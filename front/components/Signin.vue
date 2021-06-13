@@ -29,6 +29,8 @@
           label="Phone"
           required
         ></v-text-field>
+        
+        <p v-if="error_num_phone" class="error-phone" >{{message_error}}</p> 
         <v-btn
           v-if="code_sign_time === 0"
           :disabled="!valid"
@@ -39,7 +41,7 @@
           {{ onrecapcha }}
           получить код
         </v-btn>
-        <v-btn v-if="code_sign_time <= 60 && code_sign_time > 0">
+        <v-btn  v-if="code_sign_time <= 20 && code_sign_time > 0">
           повторно через {{ code_sign_time }} с
         </v-btn>
       </v-form>
@@ -50,6 +52,7 @@
           label="code"
           required
         ></v-text-field>
+        <p class="error-code" v-if="error_cod">Неверный код!</p>
         <v-btn
           :disabled="!valid"
           color="success"
@@ -58,6 +61,7 @@
         >
           вход
         </v-btn>
+        
       </v-form>
     </div>
   </div>
@@ -65,6 +69,7 @@
 
 <script>
 const Cookie = process.client ? require("js-cookie") : undefined;
+var intervalId
 import firebase from "firebase";
 var provider = new firebase.auth.GoogleAuthProvider();
 export default {
@@ -89,7 +94,9 @@ export default {
     return {
       code_sign_time: 0,
       valid: true,
+      message_error:'',
       stoptime: true,
+      error_cod:false,
       phonerules: [
         (v) => v.length > 1 || "номер обязателен",
         (v) => v[0] == "+" || "+ обязателен",
@@ -102,20 +109,31 @@ export default {
       google_name: "",
       phone_form_sign: false,
       code_form: false,
+      error_num_phone:false, 
       phone: "+",
       code: "",
     };
   },
   methods: {
     stopSec_time() {
-      if (this.code_sign_time > 0) {
+        if(this.code_sign_time <=1){
+        clearInterval(intervalId);
+        this.code_form = false
+        this.code_sign_time = 0
+      }
+      else{
         this.code_sign_time = this.code_sign_time - 1;
       }
+
+ 
     },
 
 
     timecode() {
-      setInterval(this.stopSec_time, 1000);
+     
+      intervalId = setInterval(this.stopSec_time, 1000);
+  
+
     },
 
 
@@ -148,12 +166,22 @@ export default {
           window.confirmationResult = confirmationResult;
 
           self.code_form = true;
-          self.code_sign_time = 60;
+          self.code_sign_time = 20;
           self.timecode();
         })
         .catch((error) => {
+          if(error.code === 'auth/invalid-phone-number'){
+            self.message_error = 'Неверный номер'
+          }
+          else{
+            self.message_error = "Проблемы, попробуйте позже"
+          }
+          self.error_num_phone = true
+          setTimeout(() => {
+            self.error_num_phone = false
+          }, 2000);
           console.log("eeror");
-          console.log(error);
+          console.log(error.code);
         });
     },
 
@@ -186,6 +214,10 @@ export default {
           self.code_sign_time = 0;
         })
         .catch((error) => {
+          self.error_cod = true
+          setTimeout(() => {
+            self.error_cod = false
+          }, 1000);
           console.log("error", error);
         });
     },
@@ -260,5 +292,17 @@ img {
   .hello-alert {
     font-size: 0.6rem;
   }
+}
+.error-code{
+  color: red;
+  position: absolute;
+  z-index: 1;
+  top: 62%;
+  right: 20%;
+}
+.error-phone{
+  position: absolute;
+  top: 0;
+  color: red;
 }
 </style>
