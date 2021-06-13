@@ -34,7 +34,7 @@
           <v-spacer></v-spacer>
 
           <v-btn
-            style="font-size:0.8rem"
+            style="font-size:0.8rem;box-shadow: 3px 3px 3px #00000073;margin-top:1rem"
             text
             @click="dialog = false"
           >

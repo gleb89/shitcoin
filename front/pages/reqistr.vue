@@ -52,8 +52,9 @@ var provider = new firebase.auth.GoogleAuthProvider();
 
 
 export default {
-    created(){
+  created(){
   if (process.browser){ 
+    console.log('kkk');
 window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('sign-in-button', {
   'size': 'invisible',
   'callback': (response) => {
