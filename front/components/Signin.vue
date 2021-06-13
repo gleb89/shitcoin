@@ -41,7 +41,7 @@
           {{ onrecapcha }}
           получить код
         </v-btn>
-        <v-btn  v-if="code_sign_time <= 20 && code_sign_time > 0">
+        <v-btn  v-if="code_sign_time <= 60 && code_sign_time > 0">
           повторно через {{ code_sign_time }} с
         </v-btn>
       </v-form>
@@ -166,7 +166,7 @@ export default {
           window.confirmationResult = confirmationResult;
 
           self.code_form = true;
-          self.code_sign_time = 20;
+          self.code_sign_time = 60;
           self.timecode();
         })
         .catch((error) => {
