@@ -13,11 +13,23 @@
         line-width="2"
         padding="16"
       ></v-sparkline>
-            <p @click="oMne" style="color:black;cursor:pointer;margin-bottom:4rem;background: aquamarine;">
-              
-                О сайте
-                <fa icon="arrow-alt-circle-right"></fa>
-          </p>
+           
+      <v-btn
+      @click="oMne" 
+      class="mx-2"
+      fab
+      dark
+      large
+      color="cyan"
+    >
+      <v-icon dark>
+        mdi-pencil
+      </v-icon>
+     
+    </v-btn>
+         <p @click="oMne"  class="pro-site">о сайте</p>        
+               
+          
       </div>
  
     </v-col>
@@ -121,6 +133,13 @@ h1{
     
     font-size: 5rem;
   }
+}
+.pro-site{
+  font-size: 0.7rem;
+text-shadow: 1px 1px 1px #f2eaea82;
+position: relative;
+top: -1.3rem;
+color: white;
 }
 .other{
       background: rgba(167, 202, 213, 0.33);
