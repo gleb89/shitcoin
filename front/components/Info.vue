@@ -23,7 +23,7 @@
             <Market :exchange="exchange" />
           </v-card-text>
           <v-card-text class="coment-div" v-if="iteminfo === 'Коментарии'">
-            <v-alert
+            <!-- <v-alert
             v-if="alert_auth"
             class="alert-sign"
                dense
@@ -58,7 +58,8 @@
             </div>
             <div v-if="!comments.length">
               <h4>Комментариев нет</h4>
-            </div>
+            </div> -->
+         <h4>В разработке</h4>
           </v-card-text>
         </v-card>
       </v-tab-item>
