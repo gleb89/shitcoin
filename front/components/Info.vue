@@ -51,15 +51,15 @@
                 отправить
               </v-btn>
             </v-form>
-            
-            <div v-if="comments.length">
+            {{comments}}
+            <!-- <div v-if="comments.length">
             <div style="margin-bottom:4rem" v-for="(comment, index) in comments" :key="index">
               <Comments :comment="comment" />
             </div>
             </div>
             <div v-if="!comments.length">
               <h4>Комментариев нет</h4>
-            </div>
+            </div> -->
           </v-card-text>
         </v-card>
       </v-tab-item>
