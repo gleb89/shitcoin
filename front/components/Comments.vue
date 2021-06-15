@@ -63,22 +63,6 @@
   
     </v-card>
     <div v-if="comment.children && comment.children.length" style="margin-top:1rem;">
-      <!-- <div style="max-width: 400px;text-align: end;">
-          <v-btn
-          style="background: cornsilk;"
-          @click="get_comments = !get_comments"
-          >
-          <span
-          v-if="!get_comments"
-          >читать ответы ({{comment.children.length}})
-          </span>
-          <span
-          v-if="get_comments"
-          >свернуть
-          </span>
-          </v-btn>
-      </div> -->
-    
     <div v-if="get_comments">
       <div style="margin-top:4rem" v-for="(comment_children, index) of comment.children" :key="index">
         <Comments :comment="comment_children" />
@@ -120,10 +104,5 @@ export default {
     width: 80%;
   }
 }
-.box-card {
-  /* display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  flex-direction: column; */
-}
+
 </style>

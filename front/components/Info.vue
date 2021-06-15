@@ -78,7 +78,7 @@ import Comments from "@/components/Comments";
 export default {
   async fetch() {
     this.comments = await fetch(
-      `https://apicrypto.ru/api/v1/comments/?coin_id=${this.coin.id}`
+      `/api/comments/?coin_id=${this.coin.id}`
     ).then((res) => res.json());
   },
   props: ["coin", "onsendComentParent"],
@@ -140,7 +140,7 @@ export default {
       };
      
       this.$axios
-        .$post("https://apicrypto.ru/api/v1/comments", data, {
+        .$post("/api/comments/", data, {
           headers: headers
         })
         .then(
