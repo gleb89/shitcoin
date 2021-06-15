@@ -51,6 +51,7 @@
                 отправить
               </v-btn>
             </v-form>
+            
             <div v-if="comments.length">
             <div style="margin-bottom:4rem" v-for="(comment, index) in comments" :key="index">
               <Comments :comment="comment" />
@@ -77,10 +78,13 @@ import Comments from "@/components/Comments";
 
 export default {
   async fetch() {
+      console.log(this.coin.id);
     this.comments = await fetch(
-      `/api/comments/?coin_id=${this.coin.id}`
+      `https://apicrypto.ru/api/v1/comments/?coin_id=${this.coin.id}`
     ).then((res) => res.json());
   },
+
+  
   props: ["coin", "onsendComentParent"],
   components: {
     Price,
@@ -97,6 +101,9 @@ export default {
         return false
       }
       
+    },
+    listcomments(){
+      return this.comments_coin  
     },
     ontab() {
       this.iteminfo = this.items[this.tab];

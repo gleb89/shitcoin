@@ -18,9 +18,8 @@
            
 
         </div>
-        "Turns out semicolon-less style is easier and safer in TS because most
-        gotcha edge cases are type invalid as well."
-        {{ comment.text_comment }}
+        "{{ comment.text_comment }}"
+        
       </v-card-text>
 
       <v-card-actions>
