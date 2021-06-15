@@ -15,7 +15,7 @@
 
     </v-col>
     <v-col cols="12" class="header" justify="center" align="center">
-      <Info :coin="coin" :onsendComentParent="onsendComentParent" />
+      <Info :coin="coin" :comments="comments" :onsendComentParent="onsendComentParent" />
     </v-col>
   </v-row>
 </template>
@@ -30,18 +30,24 @@ export default {
     { hid: 'description', name: 'description', content:'список криптовалют shitcoinmarketcap' },
     { hid: 'homepage', name: 'keywords', content:'список криптовалют' }
   ],
-  asyncData({ $axios, route, error }) {
+  async asyncData({ $axios, route, error }) {
     const headers = {
       "Content-Type": "application/json",
     };
     const coin_id = Number(route.params.id);
-    return $axios
-      .$get(`/api/coins/${coin_id}/`, {
-      })
-      .then((coin) => {
-        return { coin };
-      });
+    const coin_data =  await $axios.$get(`/api/coins/${coin_id}/`);
+    const comments_id_data =  await $axios.$get(`/api/comments/?coin_id=${coin_id}`);
+    return {coin:coin_data, comments:comments_id_data}
+      // .then((coin_data) => {
+      //   return { coin };
+      // });
   
+  },
+  data(){
+    return{
+      coin:[],
+      comments:[]
+    }
   },
 
 

@@ -51,15 +51,14 @@
                 отправить
               </v-btn>
             </v-form>
-            {{comments}}
-            <!-- <div v-if="comments.length">
+            <div v-if="comments.length">
             <div style="margin-bottom:4rem" v-for="(comment, index) in comments" :key="index">
               <Comments :comment="comment" />
             </div>
             </div>
             <div v-if="!comments.length">
               <h4>Комментариев нет</h4>
-            </div> -->
+            </div>
           </v-card-text>
         </v-card>
       </v-tab-item>
@@ -77,14 +76,7 @@ import Market from "@/components/Market";
 import Comments from "@/components/Comments";
 
 export default {
-
-async fetch() {
-      this.comments = await fetch(
-        `https://apicrypto.ru/api/v1/comments/?coin_id=${this.coin.id}`
-      ).then(res => res.json())
-    },
-  fetchOnServer: false,
-  props: ["coin", "onsendComentParent"],
+  props: ["coin", "onsendComentParent","comments"],
   components: {
     Price,
     About,
@@ -115,7 +107,6 @@ async fetch() {
       tab: null,
       coinprice: this.coin,
       iteminfo: "Описание",
-      comments: [],
       alert_auth: false,
       items: ["Описание", "Рынки", "Коментарии"],
     };
