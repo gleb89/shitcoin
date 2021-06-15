@@ -80,7 +80,7 @@ export default {
 
 async fetch() {
       this.comments = await fetch(
-        `https://apicrypto.ru/api/v1/comments/?coin_id=${this.coin.id}`
+        `https://apicrypto.ru/api/v1/comments/`
       ).then(res => res.json())
     },
   fetchOnServer: false,
