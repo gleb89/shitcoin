@@ -77,14 +77,13 @@ import Market from "@/components/Market";
 import Comments from "@/components/Comments";
 
 export default {
-  async fetch() {
-      console.log(this.coin.id);
-    this.comments = await fetch(
-      `https://apicrypto.ru/api/v1/comments/?coin_id=${this.coin.id}`
-    ).then((res) => res.json());
-  },
 
-  
+async fetch() {
+      this.comments = await fetch(
+        `https://apicrypto.ru/api/v1/comments/?coin_id=${this.coin.id}`
+      ).then(res => res.json())
+    },
+  fetchOnServer: false,
   props: ["coin", "onsendComentParent"],
   components: {
     Price,
@@ -93,6 +92,7 @@ export default {
     Comments,
   },
   computed: {
+
     ontext(){
       if(this.comment_text){
         return true
@@ -101,9 +101,6 @@ export default {
         return false
       }
       
-    },
-    listcomments(){
-      return this.comments_coin  
     },
     ontab() {
       this.iteminfo = this.items[this.tab];
@@ -124,6 +121,7 @@ export default {
     };
   },
   methods: {
+ 
     submit_comment(){
       let name_user = this.$store.state.auth
       if(name_user  === null){
