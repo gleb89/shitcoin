@@ -94,7 +94,7 @@ locatorButtonPressed () {
   async getStreetAddressFrom(lat, long) {
 
     await this.$axios.get(
-      `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=AIzaSyD0OSOPbGOj-Z1jXwDFLIDdaZsRuLXgyBM`
+      `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=${process.env.API_GOOGLE_MAP}`
     )
     .then((resp) =>{
        console.log(resp.data.plus_code.compound_code);
