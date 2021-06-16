@@ -22,39 +22,65 @@
           <v-card-text v-if="iteminfo === 'Рынки'">
             <Market :exchange="exchange" />
           </v-card-text>
-          <v-card-text class="coment-div" v-if="iteminfo === 'Коментарии'">
-            <v-alert
-            v-if="alert_auth"
-            class="alert-sign"
-               dense
-              
-              type="warning"
-            >Выполните вход!</v-alert>
-            <v-form ref="form_com"
-            style="margin-bottom: 3rem; text-align: end"
-            v-model="valid"
-            lazy-validation>
+          <v-dialog v-model="dialog_answer" width="500">
+            <v-card style="padding:1rem">
+
+
+             <v-form
+              ref="form_com_children"
+              v-model="valid"
+              lazy-validation
+            >
               <v-textarea
-                v-model="comment_text"
+                v-model="comment_text_children"
                 label="Оставить комментарий"
-                :rules="[v => !!v || 'Не может быть пустым']"
+                :rules="[(v) => !!v || 'Не может быть пустым']"
                 counter
                 maxlength="500"
                 full-width
                 single-line
                 required
               ></v-textarea>
-              <v-btn
-                :disabled="!ontext"
-                class="mr-4"
-                @click="submit_comment">
+              <v-btn :disabled="!ontextchildren" class="mr-4" @click="submit_comment_children">
+                отправить
+              </v-btn>
+            </v-form>
+
+
+            </v-card>
+          </v-dialog>
+          <v-card-text class="coment-div" v-if="iteminfo === 'Коментарии'">
+            <v-alert v-if="alert_auth" class="alert-sign" dense type="warning"
+              >Выполните вход!</v-alert
+            >
+            <v-form
+              ref="form_com"
+              style="margin-bottom: 3rem; text-align: end"
+              v-model="valid"
+              lazy-validation
+            >
+              <v-textarea
+                v-model="comment_text"
+                label="Оставить комментарий"
+                :rules="[(v) => !!v || 'Не может быть пустым']"
+                counter
+                maxlength="500"
+                full-width
+                single-line
+                required
+              ></v-textarea>
+              <v-btn :disabled="!ontext" class="mr-4" @click="submit_comment">
                 отправить
               </v-btn>
             </v-form>
             <div v-if="comments.length">
-            <div style="margin-bottom:4rem" v-for="(comment, index) in comments" :key="index">
-              <Comments :comment="comment" />
-            </div>
+              <div
+                style="margin-bottom: 4rem"
+                v-for="(comment, index) in comments"
+                :key="index"
+              >
+                <Comments :comment="comment" :on_form_comment_answer="on_form_comment_answer"/>
+              </div>
             </div>
             <div v-if="!comments.length">
               <h4>Комментариев нет</h4>
@@ -68,7 +94,7 @@
 
 <script>
 import { mapState } from "vuex";
-const Cookie = process.client ? require('js-cookie') : undefined
+const Cookie = process.client ? require("js-cookie") : undefined;
 
 import Price from "@/components/Price";
 import About from "@/components/About";
@@ -76,7 +102,7 @@ import Market from "@/components/Market";
 import Comments from "@/components/Comments";
 
 export default {
-  props: ["coin", "onsendComentParent","comments"],
+  props: ["coin", "onsendComentParent", "comments"],
   components: {
     Price,
     About,
@@ -84,15 +110,19 @@ export default {
     Comments,
   },
   computed: {
-
-    ontext(){
-      if(this.comment_text){
-        return true
+    ontextchildren(){
+      if (this.comment_text_children) {
+        return true;
+      } else {
+        return false;
       }
-      else{
-        return false
+    },
+    ontext() {
+      if (this.comment_text) {
+        return true;
+      } else {
+        return false;
       }
-      
     },
     ontab() {
       this.iteminfo = this.items[this.tab];
@@ -100,8 +130,14 @@ export default {
   },
   data() {
     return {
-      valid:true,
-      comment_text:'',
+      valid: true,
+      name_user:'',
+      parent:null,
+      object_id:null,
+      user_parent:'',
+      comment_text_children:'',
+      dialog_answer: false,
+      comment_text: "",
       exchange: this.coin.market_exchange,
       description: this.coin.description,
       tab: null,
@@ -112,67 +148,101 @@ export default {
     };
   },
   methods: {
- 
-    submit_comment(){
-      let name_user = this.$store.state.auth
-      if(name_user  === null){
-        this.alert_auth = true
-        setTimeout(() => {
-          this.alert_auth = false
-        }, 2000);
-        
-      }
-      else{
-        let data = {
-                    "user_id": name_user.user_id,
-                    "text_comment": this.comment_text,
-                    "user_parent": '',
-                    "object_id": this.coin.id,
-                    "parent": null,
-                    "content_type": 8
-      };
+    on_form_comment_answer(parent,user_parent, object_id,name_user){
+      this.name_user = name_user
+      this.parent = parent
+      this.object_id = object_id
+      this.user_parent = user_parent
+      this.dialog_answer = true
+    },
+    submit_comment_children(){
+      console.log('ok');
+       const data = {
+          "user_id": this.name_user,         
+          "text_comment": this.comment_text_children,  
+          "user_parent": this.user_parent,           
+          "object_id": this.object_id,               
+          "parent": this.parent,                     
+          "content_type": 8
+        }
       const headers = {
         "Content-Type": "application/json"
       };
-     
-      this.$axios
+      console.log(data);
+         this.$axios
         .$post("/api/comments/", data, {
           headers: headers
         })
         .then(
           response => {
-            this.comments.unshift(response)
+            // this.comments.unshift(response)
+            console.log(response);
+            this.dialog_answer = false
           },
           error => {
             console.log(error);
           }
         )
-      }
+      
+    },
+    submit_comment() {
+      let name_user = this.$store.state.auth;
+      if (name_user === null) {
+        this.alert_auth = true;
+        setTimeout(() => {
+          this.alert_auth = false;
+        }, 2000);
+      } else {
+        let data = {
+          user_id: name_user.user_id,
+          text_comment: this.comment_text,
+          user_parent: "",
+          object_id: this.coin.id,
+          parent: null,
+          content_type: 8,
+        };
+        const headers = {
+          "Content-Type": "application/json",
+        };
+
+        this.$axios
+          .$post("/api/comments/", data, {
+            headers: headers,
+          })
+          .then(
+            (response) => {
+              this.comments.unshift(response);
+            },
+            (error) => {
+              console.log(error);
+            }
+          );
       }
     },
+  },
 };
 </script>
 
 
 <style scoped>
-.alert-sign{
+.alert-sign {
   max-width: 18rem;
 }
-@media(min-width:550px){
-  .alert-sign{
-  position: absolute;
-  z-index: 1;
-  top: 7rem;
-  left: 45%;
+@media (min-width: 550px) {
+  .alert-sign {
+    position: absolute;
+    z-index: 1;
+    top: 7rem;
+    left: 45%;
+  }
 }
-}
-@media(max-width:500px){
-  .alert-sign{
-  position: absolute;
-  top: 7rem;
-  z-index: 1;
-  left: 20%;
-}
+@media (max-width: 500px) {
+  .alert-sign {
+    position: absolute;
+    top: 7rem;
+    z-index: 1;
+    left: 20%;
+  }
 }
 
 .card-comment {
