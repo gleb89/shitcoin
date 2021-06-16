@@ -2,50 +2,50 @@
   {
     "name": "coins_list",
     "path": "/coins_list",
-    "component": "/home/ubuntu/projects/front/shitcoin/front/pages/coins_list/index.vue",
+    "component": "D:\\\\shitfront\\\\shitcoin\\\\front\\\\pages\\\\coins_list\\\\index.vue",
     "chunkName": "pages/coins_list/index",
-    "_name": "_2d50661b"
+    "_name": "_d57c96b4"
   },
   {
     "name": "inspire",
     "path": "/inspire",
-    "component": "/home/ubuntu/projects/front/shitcoin/front/pages/inspire.vue",
+    "component": "D:\\\\shitfront\\\\shitcoin\\\\front\\\\pages\\\\inspire.vue",
     "chunkName": "pages/inspire",
-    "_name": "_632f68cd"
+    "_name": "_577f9eee"
   },
   {
     "name": "omne",
     "path": "/omne",
-    "component": "/home/ubuntu/projects/front/shitcoin/front/pages/omne.vue",
+    "component": "D:\\\\shitfront\\\\shitcoin\\\\front\\\\pages\\\\omne.vue",
     "chunkName": "pages/omne",
-    "_name": "_40f7d1b2"
+    "_name": "_5012f914"
   },
   {
     "name": "reqistr",
     "path": "/reqistr",
-    "component": "/home/ubuntu/projects/front/shitcoin/front/pages/reqistr.vue",
+    "component": "D:\\\\shitfront\\\\shitcoin\\\\front\\\\pages\\\\reqistr.vue",
     "chunkName": "pages/reqistr",
-    "_name": "_1e12d2b9"
+    "_name": "_e1b8cb16"
   },
   {
     "name": "search",
     "path": "/search",
-    "component": "/home/ubuntu/projects/front/shitcoin/front/pages/search.vue",
+    "component": "D:\\\\shitfront\\\\shitcoin\\\\front\\\\pages\\\\search.vue",
     "chunkName": "pages/search",
-    "_name": "_57cc66f6"
+    "_name": "_b399c56e"
   },
   {
     "name": "coins_list-id",
     "path": "/coins_list/:id",
-    "component": "/home/ubuntu/projects/front/shitcoin/front/pages/coins_list/_id.vue",
+    "component": "D:\\\\shitfront\\\\shitcoin\\\\front\\\\pages\\\\coins_list\\\\_id.vue",
     "chunkName": "pages/coins_list/_id",
-    "_name": "_0b31997a"
+    "_name": "_ca3eaee4"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/home/ubuntu/projects/front/shitcoin/front/pages/index.vue",
+    "component": "D:\\\\shitfront\\\\shitcoin\\\\front\\\\pages\\\\index.vue",
     "chunkName": "pages/index",
-    "_name": "_818684f6"
+    "_name": "_08144441"
   }
 ]

@@ -5,6 +5,7 @@
       <div class="" style="width: 100%;text-align: center;" >
         <img class="img-call" src="call.png" alt="">
         <h1>Shitcoincap</h1>
+        <span v-if="!location">{{ongeolocation}}</span>
               <v-sparkline
               v-if="gg"
         :labels="[1,2,3,4,5]"
@@ -56,13 +57,53 @@ export default {
     { hid: 'description', name: 'description', content:'список криптовалют shitcoinmarketcap' },
     { hid: 'homepage', name: 'keywords', content:'Список scam crypto' }
   ],
+  computed:{
+    paginationcoin(){
+        this.onData(this.page) 
+    },
+    ongeolocation(){
+      if(!this.location){
+        this.locatorButtonPressed()
+      }
+    },
+  },
     data(){
       return{
         page: 1,
-        gg:false
+        gg:false,
+        location:false
       }
     },
     methods:{
+locatorButtonPressed () { 
+  setTimeout(() => {
+      navigator.geolocation.getCurrentPosition ( 
+     position => { 
+       let lat = position.coords.latitude
+       let long = position.coords.longitude 
+       console.log(lat, long);
+       this.getStreetAddressFrom(lat, long)
+     }, 
+     error => { 
+       console.log (error.message) ; 
+     },)
+  }, 1000);
+ 
+     
+},
+  async getStreetAddressFrom(lat, long) {
+
+    await this.$axios.get(
+      `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=AIzaSyD0OSOPbGOj-Z1jXwDFLIDdaZsRuLXgyBM`
+    )
+    .then((resp) =>{
+       console.log(resp.data.plus_code.compound_code);
+       this.location = true
+    }),
+      (error) => {
+            console.log(error);
+      }
+  },
       oMne(){
         this.$router.push('/omne')
       },
@@ -95,11 +136,7 @@ export default {
           })
       },
 
-  computed:{
-    paginationcoin(){
-        this.onData(this.page) 
-    }
-  },
+
   components:{
     TableCoin
   }

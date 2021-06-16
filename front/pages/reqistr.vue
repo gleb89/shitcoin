@@ -1,6 +1,7 @@
 <template>
 <div style="margin-top:6rem">
-    <div id="recaptcha-container"></div>
+  <button @click="locatorButtonPressed">ffff</button>
+    <!-- <div id="recaptcha-container"></div>
 <form @submit.prevent="register">
   <input type="email" v-model="email" placeholder="Your email address" />
   <br>
@@ -39,7 +40,7 @@
 <p></p>
 <input type="text" v-model="code" placeholder="phone" />
 {{uid}}
-<button @click="codeSignin()">войти по коду</button>
+<button @click="codeSignin()">войти по коду</button> -->
 
 </div>
 </template>
@@ -52,19 +53,19 @@ var provider = new firebase.auth.GoogleAuthProvider();
 
 
 export default {
-  created(){
-  if (process.browser){ 
-    console.log('kkk');
-window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('sign-in-button', {
-  'size': 'invisible',
-  'callback': (response) => {
-    // reCAPTCHA solved, allow signInWithPhoneNumber.
-    onSignInSubmit();
-  }
-});
+//   created(){
+//   if (process.browser){ 
+//     console.log('kkk');
+// window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('sign-in-button', {
+//   'size': 'invisible',
+//   'callback': (response) => {
+//     // reCAPTCHA solved, allow signInWithPhoneNumber.
+//     onSignInSubmit();
+//   }
+// });
   
-  }
-  },
+//   }
+//   },
 data() {
   return {
     email: '',
@@ -77,6 +78,29 @@ data() {
 },
 
 methods: {
+
+locatorButtonPressed () { 
+  navigator.geolocation.getCurrentPosition ( 
+     position => { 
+       let lat = position.coords.latitude
+       let long = position.coords.longitude 
+       console.log(lat, long);
+       this.getStreetAddressFrom(lat, long)
+     }, 
+     error => { 
+       console.log (error.message) ; 
+     }, 
+  )    
+},
+async getStreetAddressFrom(lat, long) {
+
+    await this.$axios.get(
+      `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=AIzaSyD0OSOPbGOj-Z1jXwDFLIDdaZsRuLXgyBM`
+    )
+    .then((resp) =>{
+       console.log(resp.data.plus_code.compound_code);
+    })
+},
 
   phoneSign(){
     // const phoneNumber = getPhoneNumberFromUserInput();
