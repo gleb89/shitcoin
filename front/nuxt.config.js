@@ -64,9 +64,9 @@ export default {
       pathRewrite: { "^/api/": "" }
     }
   },
-  // server: {
-  //   port: 80 // default: 3000
-  // },
+  server: {
+    port: 80 // default: 3000
+  },
 
   fontawesome:{
     component:'fa',

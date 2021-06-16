@@ -22,33 +22,6 @@
           <v-card-text v-if="iteminfo === 'Рынки'">
             <Market :exchange="exchange" />
           </v-card-text>
-          <v-dialog v-model="dialog_answer" width="500">
-            <v-card style="padding:1rem">
-
-
-             <v-form
-              ref="form_com_children"
-              v-model="valid"
-              lazy-validation
-            >
-              <v-textarea
-                v-model="comment_text_children"
-                label="Оставить комментарий"
-                :rules="[(v) => !!v || 'Не может быть пустым']"
-                counter
-                maxlength="500"
-                full-width
-                single-line
-                required
-              ></v-textarea>
-              <v-btn :disabled="!ontextchildren" class="mr-4" @click="submit_comment_children">
-                отправить
-              </v-btn>
-            </v-form>
-
-
-            </v-card>
-          </v-dialog>
           <v-card-text class="coment-div" v-if="iteminfo === 'Коментарии'">
             <v-alert v-if="alert_auth" class="alert-sign" dense type="warning"
               >Выполните вход!</v-alert
@@ -79,7 +52,7 @@
                 v-for="(comment, index) in comments"
                 :key="index"
               >
-                <Comments :comment="comment" :on_form_comment_answer="on_form_comment_answer"/>
+                <Comments :comment="comment" />
               </div>
             </div>
             <div v-if="!comments.length">
@@ -110,13 +83,6 @@ export default {
     Comments,
   },
   computed: {
-    ontextchildren(){
-      if (this.comment_text_children) {
-        return true;
-      } else {
-        return false;
-      }
-    },
     ontext() {
       if (this.comment_text) {
         return true;
@@ -155,36 +121,7 @@ export default {
       this.user_parent = user_parent
       this.dialog_answer = true
     },
-    submit_comment_children(){
-      console.log('ok');
-       const data = {
-          "user_id": this.name_user,         
-          "text_comment": this.comment_text_children,  
-          "user_parent": this.user_parent,           
-          "object_id": this.object_id,               
-          "parent": this.parent,                     
-          "content_type": 8
-        }
-      const headers = {
-        "Content-Type": "application/json"
-      };
-      console.log(data);
-         this.$axios
-        .$post("/api/comments/", data, {
-          headers: headers
-        })
-        .then(
-          response => {
-            // this.comments.unshift(response)
-            console.log(response);
-            this.dialog_answer = false
-          },
-          error => {
-            console.log(error);
-          }
-        )
-      
-    },
+
     submit_comment() {
       let name_user = this.$store.state.auth;
       if (name_user === null) {
