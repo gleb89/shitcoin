@@ -11,6 +11,7 @@
           вход по номеру телефона
           <fa class="phone-icon" icon="mobile-alt"></fa>
         </v-btn>
+        <span style="font-size: 0.6rem;">(смс с кодом приходят не всегда по Российской федерации <br> т.к использую бесплатный сервис)</span>
       </div>
       <div v-if="sign">
         <v-alert

@@ -1,5 +1,5 @@
 
-<template>
+<template  >
  <!-- App.vue -->
 
 <v-app class="apps"  >

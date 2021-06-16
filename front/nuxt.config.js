@@ -21,13 +21,15 @@ export default {
   script: [
     {
       src: "https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js",
-      src: "https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"
+      src: "https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js",
+      src: "/__/firebase/init.js",
     }
   ],
   link: [
     // {rel:'manifest',href: 'js13kpwa.webmanifest'},
    
   ],
+
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
