@@ -63,7 +63,9 @@ export default {
     // },
     ongeolocation(){
       if(!this.location){
+        if(process.browser){
         this.locatorButtonPressed()
+        }
       }
     },
   },
@@ -76,7 +78,8 @@ export default {
     },
     methods:{
 locatorButtonPressed () { 
-  setTimeout(() => {
+ 
+  
       navigator.geolocation.getCurrentPosition ( 
      position => { 
        let lat = position.coords.latitude
@@ -87,7 +90,8 @@ locatorButtonPressed () {
      error => { 
        console.log (error.message) ; 
      },)
-  }, 1000);
+  
+  
  
      
 },
@@ -120,7 +124,7 @@ locatorButtonPressed () {
     //       })
       
     //   }
-    // },
+    },
       asyncData({ $axios,route, error }) {
     const headers = {
         "Content-Type": "application/json"
