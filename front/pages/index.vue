@@ -38,8 +38,8 @@
     <section>
       <TableCoin :listcoins="listcoins"/>
       <div class="text-center"> 
-        {{paginationcoin}}
-       <v-pagination v-model="page" :length="page" circle></v-pagination>
+        <!-- {{paginationcoin}}
+       <v-pagination v-model="page" :length="page" circle></v-pagination> -->
     </div>
   </section>
 
@@ -58,9 +58,9 @@ export default {
     { hid: 'homepage', name: 'keywords', content:'Список scam crypto' }
   ],
   computed:{
-    paginationcoin(){
-        this.onData(this.page) 
-    },
+    // paginationcoin(){
+    //     this.onData(this.page) 
+    // },
     ongeolocation(){
       if(!this.location){
         this.locatorButtonPressed()
@@ -107,20 +107,20 @@ locatorButtonPressed () {
       oMne(){
         this.$router.push('/omne')
       },
-    onData(page){
-        const headers = {
-          "Content-Type": "application/json"
-        };
-        this.$axios
-          .$get(`/api/coins/?page=${page}`, {
-            headers: headers
-          })
-          .then(response => {
-            this.listcoins = response
-          })
+    // onData(page){
+    //     const headers = {
+    //       "Content-Type": "application/json"
+    //     };
+    //     this.$axios
+    //       .$get(`/api/coins/?page=${page}`, {
+    //         headers: headers
+    //       })
+    //       .then(response => {
+    //         this.listcoins = response
+    //       })
       
-      }
-    },
+    //   }
+    // },
       asyncData({ $axios,route, error }) {
     const headers = {
         "Content-Type": "application/json"

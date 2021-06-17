@@ -3,49 +3,42 @@
     "name": "coins_list",
     "path": "/coins_list",
     "component": "D:\\\\shitfront\\\\shitcoin\\\\front\\\\pages\\\\coins_list\\\\index.vue",
-    "chunkName": "pages/coins_list/index",
-    "_name": "_d57c96b4"
+    "chunkName": "pages/coins_list/index"
   },
   {
     "name": "inspire",
     "path": "/inspire",
     "component": "D:\\\\shitfront\\\\shitcoin\\\\front\\\\pages\\\\inspire.vue",
-    "chunkName": "pages/inspire",
-    "_name": "_577f9eee"
+    "chunkName": "pages/inspire"
   },
   {
     "name": "omne",
     "path": "/omne",
     "component": "D:\\\\shitfront\\\\shitcoin\\\\front\\\\pages\\\\omne.vue",
-    "chunkName": "pages/omne",
-    "_name": "_5012f914"
+    "chunkName": "pages/omne"
   },
   {
     "name": "reqistr",
     "path": "/reqistr",
     "component": "D:\\\\shitfront\\\\shitcoin\\\\front\\\\pages\\\\reqistr.vue",
-    "chunkName": "pages/reqistr",
-    "_name": "_e1b8cb16"
+    "chunkName": "pages/reqistr"
   },
   {
     "name": "search",
     "path": "/search",
     "component": "D:\\\\shitfront\\\\shitcoin\\\\front\\\\pages\\\\search.vue",
-    "chunkName": "pages/search",
-    "_name": "_b399c56e"
+    "chunkName": "pages/search"
   },
   {
     "name": "coins_list-id",
     "path": "/coins_list/:id",
     "component": "D:\\\\shitfront\\\\shitcoin\\\\front\\\\pages\\\\coins_list\\\\_id.vue",
-    "chunkName": "pages/coins_list/_id",
-    "_name": "_ca3eaee4"
+    "chunkName": "pages/coins_list/_id"
   },
   {
     "name": "index",
     "path": "/",
     "component": "D:\\\\shitfront\\\\shitcoin\\\\front\\\\pages\\\\index.vue",
-    "chunkName": "pages/index",
-    "_name": "_08144441"
+    "chunkName": "pages/index"
   }
 ]
