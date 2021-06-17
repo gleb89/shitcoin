@@ -200,7 +200,7 @@ export async function setContext (app, context) {
       payload: context.payload,
       error: context.error,
       base: app.router.options.base,
-      env: {}
+      env: {"API_GOOGLE_MAP":"AIzaSyD0OSOPbGOj-Z1jXwDFLIDdaZsRuLXgyBM"}
     }
     // Only set once
 

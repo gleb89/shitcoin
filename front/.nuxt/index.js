@@ -5,7 +5,7 @@ import ClientOnly from 'vue-client-only'
 import NoSsr from 'vue-no-ssr'
 import { createRouter } from './router.js'
 import NuxtChild from './components/nuxt-child.js'
-import NuxtError from '..\\layouts\\error.vue'
+import NuxtError from '../layouts/error.vue'
 import Nuxt from './components/nuxt.js'
 import App from './App.js'
 import { setContext, getLocation, getRouteData, normalizeError } from './utils'
@@ -13,11 +13,11 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_1b26c984 from 'nuxt_plugin_plugin_1b26c984' // Source: .\\components\\plugin.js (mode: 'all')
-import nuxt_plugin_plugin_9ac5fe20 from 'nuxt_plugin_plugin_9ac5fe20' // Source: .\\vuetify\\plugin.js (mode: 'all')
-import nuxt_plugin_axios_8f8538b2 from 'nuxt_plugin_axios_8f8538b2' // Source: .\\axios.js (mode: 'all')
-import nuxt_plugin_fontawesome_4dcd9da9 from 'nuxt_plugin_fontawesome_4dcd9da9' // Source: .\\fontawesome.js (mode: 'all')
-import nuxt_plugin_firebase_34d6f55a from 'nuxt_plugin_firebase_34d6f55a' // Source: ..\\plugins\\firebase.js (mode: 'all')
+import nuxt_plugin_plugin_5d9a59e3 from 'nuxt_plugin_plugin_5d9a59e3' // Source: ./components/plugin.js (mode: 'all')
+import nuxt_plugin_plugin_49eeeceb from 'nuxt_plugin_plugin_49eeeceb' // Source: ./vuetify/plugin.js (mode: 'all')
+import nuxt_plugin_axios_1f220179 from 'nuxt_plugin_axios_1f220179' // Source: ./axios.js (mode: 'all')
+import nuxt_plugin_fontawesome_de35d40a from 'nuxt_plugin_fontawesome_de35d40a' // Source: ./fontawesome.js (mode: 'all')
+import nuxt_plugin_firebase_34d6f55a from 'nuxt_plugin_firebase_34d6f55a' // Source: ../plugins/firebase.js (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -214,20 +214,20 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_1b26c984 === 'function') {
-    await nuxt_plugin_plugin_1b26c984(app.context, inject)
+  if (typeof nuxt_plugin_plugin_5d9a59e3 === 'function') {
+    await nuxt_plugin_plugin_5d9a59e3(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_plugin_9ac5fe20 === 'function') {
-    await nuxt_plugin_plugin_9ac5fe20(app.context, inject)
+  if (typeof nuxt_plugin_plugin_49eeeceb === 'function') {
+    await nuxt_plugin_plugin_49eeeceb(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_axios_8f8538b2 === 'function') {
-    await nuxt_plugin_axios_8f8538b2(app.context, inject)
+  if (typeof nuxt_plugin_axios_1f220179 === 'function') {
+    await nuxt_plugin_axios_1f220179(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_fontawesome_4dcd9da9 === 'function') {
-    await nuxt_plugin_fontawesome_4dcd9da9(app.context, inject)
+  if (typeof nuxt_plugin_fontawesome_de35d40a === 'function') {
+    await nuxt_plugin_fontawesome_de35d40a(app.context, inject)
   }
 
   if (typeof nuxt_plugin_firebase_34d6f55a === 'function') {
