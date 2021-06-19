@@ -200,7 +200,7 @@ export async function setContext (app, context) {
       payload: context.payload,
       error: context.error,
       base: app.router.options.base,
-      env: {"API_GOOGLE_MAP":"AIzaSyD0OSOPbGOj-Z1jXwDFLIDdaZsRuLXgyBM"}
+      env: {"API_GOOGLE_MAP":"AIzaSyD0OSOPbGOj-Z1jXwDFLIDdaZsRuLXgyBM","apiKey":"AIzaSyD0OSOPbGOj-Z1jXwDFLIDdaZsRuLXgyBM","authDomain":"tests-d9340.firebaseapp.com","projectId":"tests-d9340","storageBucket":"tests-d9340.appspot.com","messagingSenderId":"293886293130","appId":"1:293886293130:web:b5dc0cc3abb1aafaef2973","measurementId":"G-PVBRM7QBRB"}
     }
     // Only set once
 

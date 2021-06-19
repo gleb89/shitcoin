@@ -3,42 +3,49 @@
     "name": "coins_list",
     "path": "/coins_list",
     "component": "/home/ubuntu/projects/frontshit/shitcoin/front/pages/coins_list/index.vue",
-    "chunkName": "pages/coins_list/index"
+    "chunkName": "pages/coins_list/index",
+    "_name": "_e1fef44a"
   },
   {
     "name": "inspire",
     "path": "/inspire",
     "component": "/home/ubuntu/projects/frontshit/shitcoin/front/pages/inspire.vue",
-    "chunkName": "pages/inspire"
+    "chunkName": "pages/inspire",
+    "_name": "_45a8910d"
   },
   {
     "name": "omne",
     "path": "/omne",
     "component": "/home/ubuntu/projects/frontshit/shitcoin/front/pages/omne.vue",
-    "chunkName": "pages/omne"
+    "chunkName": "pages/omne",
+    "_name": "_10099172"
   },
   {
     "name": "reqistr",
     "path": "/reqistr",
     "component": "/home/ubuntu/projects/frontshit/shitcoin/front/pages/reqistr.vue",
-    "chunkName": "pages/reqistr"
+    "chunkName": "pages/reqistr",
+    "_name": "_008bfaf9"
   },
   {
     "name": "search",
     "path": "/search",
     "component": "/home/ubuntu/projects/frontshit/shitcoin/front/pages/search.vue",
-    "chunkName": "pages/search"
+    "chunkName": "pages/search",
+    "_name": "_25ba9c45"
   },
   {
     "name": "coins_list-id",
     "path": "/coins_list/:id",
     "component": "/home/ubuntu/projects/frontshit/shitcoin/front/pages/coins_list/_id.vue",
-    "chunkName": "pages/coins_list/_id"
+    "chunkName": "pages/coins_list/_id",
+    "_name": "_351c4303"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/home/ubuntu/projects/frontshit/shitcoin/front/pages/index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_5b3a1476"
   }
 ]
