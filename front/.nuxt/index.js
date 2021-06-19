@@ -13,10 +13,10 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_5d9a59e3 from 'nuxt_plugin_plugin_5d9a59e3' // Source: ./components/plugin.js (mode: 'all')
-import nuxt_plugin_plugin_49eeeceb from 'nuxt_plugin_plugin_49eeeceb' // Source: ./vuetify/plugin.js (mode: 'all')
-import nuxt_plugin_axios_1f220179 from 'nuxt_plugin_axios_1f220179' // Source: ./axios.js (mode: 'all')
-import nuxt_plugin_fontawesome_de35d40a from 'nuxt_plugin_fontawesome_de35d40a' // Source: ./fontawesome.js (mode: 'all')
+import nuxt_plugin_plugin_816b0cba from 'nuxt_plugin_plugin_816b0cba' // Source: ./components/plugin.js (mode: 'all')
+import nuxt_plugin_plugin_3f0e35aa from 'nuxt_plugin_plugin_3f0e35aa' // Source: ./vuetify/plugin.js (mode: 'all')
+import nuxt_plugin_axios_23987d8e from 'nuxt_plugin_axios_23987d8e' // Source: ./axios.js (mode: 'all')
+import nuxt_plugin_fontawesome_fbcff48a from 'nuxt_plugin_fontawesome_fbcff48a' // Source: ./fontawesome.js (mode: 'all')
 import nuxt_plugin_firebase_34d6f55a from 'nuxt_plugin_firebase_34d6f55a' // Source: ../plugins/firebase.js (mode: 'all')
 
 // Component: <ClientOnly>
@@ -214,20 +214,20 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_5d9a59e3 === 'function') {
-    await nuxt_plugin_plugin_5d9a59e3(app.context, inject)
+  if (typeof nuxt_plugin_plugin_816b0cba === 'function') {
+    await nuxt_plugin_plugin_816b0cba(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_plugin_49eeeceb === 'function') {
-    await nuxt_plugin_plugin_49eeeceb(app.context, inject)
+  if (typeof nuxt_plugin_plugin_3f0e35aa === 'function') {
+    await nuxt_plugin_plugin_3f0e35aa(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_axios_1f220179 === 'function') {
-    await nuxt_plugin_axios_1f220179(app.context, inject)
+  if (typeof nuxt_plugin_axios_23987d8e === 'function') {
+    await nuxt_plugin_axios_23987d8e(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_fontawesome_de35d40a === 'function') {
-    await nuxt_plugin_fontawesome_de35d40a(app.context, inject)
+  if (typeof nuxt_plugin_fontawesome_fbcff48a === 'function') {
+    await nuxt_plugin_fontawesome_fbcff48a(app.context, inject)
   }
 
   if (typeof nuxt_plugin_firebase_34d6f55a === 'function') {
