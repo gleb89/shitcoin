@@ -1,8 +1,9 @@
 # shitcoincap
 1. Create a `.env` file  in folder front
+# Environment settings for local development 1-api google and 2-firebase config sdk.
 
     ```
-    # Environment settings for local development 1-api google and 2-firebase config sdk.
+    
     1.API_GOOGLE_MAP = AIzaSyD0OSOPbGOj-Z1jXwDFLIDdaZsRuLXgyBM
 
     2.
